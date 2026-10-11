@@ -1,13 +1,29 @@
 <!doctype html>
 <html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SHER AI NASIYA V8</title>
+<title>SHER AI NASIYA V16.5</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f5fb;color:#182643;font:15px system-ui,Arial}header{background:#234fd2;color:white;padding:22px 18px;border-radius:0 0 22px 22px}h1{font-size:22px;margin:0}header small{opacity:.8}.wrap{padding:12px 12px 100px;max-width:650px;margin:auto}h2{font-size:20px}.card{background:white;border:1px solid #e0e6f2;border-radius:17px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #1232}label{display:block;font-weight:600;margin:12px 0 5px}input,select{width:100%;padding:12px;border:1px solid #ccd6e7;border-radius:10px;font:inherit;min-width:0}.row{display:flex;gap:7px}.row input{flex:1}button{background:#2856d9;border:0;color:white;border-radius:11px;padding:12px;font:inherit;font-weight:700;cursor:pointer}button:active{opacity:.75}.full{width:100%;margin-top:12px}.secondary{background:#e8edfb;color:#2449bd}.danger{background:#fce6e7;color:#ad2035}.hidden{display:none!important}.muted{color:#72809b;font-size:13px}.notice{padding:12px;border-radius:10px;background:#e5f6e9;margin:10px 0}.notice.bad{background:#ffe4e5;color:#9b1831}.tilegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{padding:23px 9px;background:white;border-radius:15px;text-align:center;font-weight:700;border:1px solid #dfe5f2}.tile span{display:block;font-size:28px;margin-bottom:8px}nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:white;border-top:1px solid #dce4f2;justify-content:space-around;padding:8px 2px 12px}nav button{background:none;color:#718099;font-size:11px;padding:8px 4px;flex:1}nav button.active{color:#2456dc}nav span{display:block;font-size:22px}.item{padding:12px 0;border-bottom:1px solid #e9edf5}.marked{background:#ffebed!important;color:#a32636}.marked td:not(:last-child){text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#c21f39}.marked.item>b,.marked.item>.muted{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#c21f39}#errorOverlay{position:fixed;inset:0;z-index:99999;background:rgba(195,0,28,.93);display:none;align-items:center;justify-content:center;padding:22px;color:#fff;text-align:center}#errorOverlay.show{display:flex}#errorOverlay .warning{background:#fff;color:#a8001d;border-radius:22px;padding:30px 20px;box-shadow:0 14px 55px #52001688;width:min(100%,450px);font-weight:800;font-size:21px;line-height:1.45}#errorOverlay .symbol{font-size:52px;display:block;margin-bottom:10px}.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.actions button{padding:8px;font-size:12px}table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}td,th{padding:9px 6px;text-align:left;border-bottom:1px solid #e5eaf2}th{background:#eaf0fc}.scroll{overflow-x:auto}.pill{display:inline-block;background:#e5edff;color:#244dbb;border-radius:20px;padding:4px 8px;font-size:12px}#cameraBox{display:none;position:fixed;z-index:1000;top:8%;left:4%;right:4%;max-height:84vh;overflow:auto;box-shadow:0 0 0 999px #0009}video{width:100%;border-radius:12px}
+#editPanel{position:fixed;inset:0;z-index:2000;background:#15234499;display:none;overflow-y:auto;padding:18px 12px 35px}#editPanel.show{display:block}#editPanel .card{max-width:550px;margin:15px auto}#editPanel .row button{flex:1}body.editing{overflow:hidden}
+.debtgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:10px 0}.debtbox{padding:9px 5px;border-radius:10px;text-align:center;font-size:11px;font-weight:700;min-width:0}.debtbox strong{display:block;font-size:13px;overflow-wrap:anywhere;margin-top:5px}.debtgreen{background:#dcfce7;color:#14532d}.debtred{background:#fee2e2;color:#991b1b}.debtblack{background:#171717;color:#fff}.blacklist{background:#111;color:#ff4b4b;padding:12px;border-radius:10px;font-weight:800;margin:8px 0}.invoice-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px;align-items:stretch}.invoice-actions button{margin:0;flex:0 1 auto;min-height:42px;padding:10px 12px;font-size:13px}.invoice-actions button:focus-visible{outline:2px solid #234fd2;outline-offset:2px}
+.payment-list{margin-top:14px;padding:12px;background:#f4f6fb;border-radius:12px}.payment-row{padding:10px 0;border-top:1px solid #dbe1ec;margin-top:9px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}.payment-actions{display:flex;flex-wrap:wrap;gap:8px}.payment-actions button{margin:0;padding:8px 10px;font-size:12px}.payment-marked{background:#ffe4e6;color:#991b1b;text-decoration:line-through;padding:9px;border-radius:8px}.payment-marked button{text-decoration:none}
+.tilegrid .tile{color:#182643;background:#fff;border:1px solid #dfe5f2;min-height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;white-space:normal;font-size:14px;line-height:1.3}.tilegrid .tile span{margin:0;font-size:29px}
+.invoice-date-filter{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:12px 0}.invoice-date-filter input{width:100%;box-sizing:border-box}.invoice-day-heading{background:#e7edff;padding:12px;border-radius:12px;margin:16px 0 8px}
+.collection-invoice{border-top:1px solid #dde3ed;margin-top:12px;padding-top:12px}.collection-due{margin:7px 0;padding:8px;border-radius:8px;background:#fff0f0;color:#912323}.collection-late{background:#222;color:#fff}.collection-report{border-top:2px solid #e0e6f2;margin-top:25px;padding-top:12px}.collection-report-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:12px}.collection-report-table th,.collection-report-table td{border:1px solid #cbd5e1;padding:7px 5px;text-align:left;overflow-wrap:anywhere}.collection-report-table th{background:#e8eefc}.collection-report-table tfoot{font-weight:800;background:#e5f6e9}.collection-report-scroll{overflow-x:auto}.collection-report-table{min-width:950px;table-layout:fixed}.collection-report-table .report-phone{overflow-wrap:anywhere;white-space:normal}.collection-report-table .report-note{white-space:pre-wrap;overflow-wrap:break-word}.collection-report-scroll{overflow-x:auto}
+#cashContent .cash-balance{background:#f1f4fb;border-radius:12px;padding:14px;min-width:0}#cashContent .cash-balance strong{display:block;font-size:15px;margin-top:8px;overflow-wrap:anywhere}.cash-menu .tile{min-height:115px}#saleSuggestions{display:flex;flex-direction:column;gap:6px;margin-top:7px;max-height:300px;overflow-y:auto}.sale-suggestion{width:100%;display:flex;flex-direction:column;gap:4px;text-align:left;background:#eef3ff;color:#182643;border:1px solid #cdd9f7;padding:10px 12px;font-size:14px;font-weight:400}.sale-suggestion strong{color:#244dbb;font-size:15px}.sale-suggestion span{font-size:12px;overflow-wrap:anywhere}
 </style></head><body>
-<header><small>ADMIN • Mobil frontend sinovi</small><h1>SHER AI NASIYA</h1><small>V8 — hisob-fakturalar arxivi</small></header>
+<header><small>ADMIN • Mobil frontend sinovi</small><h1>SHER AI NASIYA</h1><small>V16.4 — Sotuv schyot-fakturasi</small></header>
 <div id="errorOverlay" role="alert" aria-live="assertive"><div class="warning"><span class="symbol">⚠️</span><div id="errorText"></div></div></div><main class="wrap"><div id="msg"></div>
-<section id="home"><h2>Bosh sahifa</h2><div class="card"><b id="summary">Ombor: 0 dona</b></div><div class="tilegrid">
-<div class="tile" onclick="page('in')"><span>📥</span>Prixod</div><div class="tile" onclick="page('warehouse')"><span>📦</span>Ombor</div><div class="tile" onclick="page('sale')"><span>🛒</span>Sotuv</div><div class="tile" onclick="page('deleted')"><span>🗑</span>Belgilanganlar</div></div></section>
+<section id="home"><h2>🏠 Bosh sahifa</h2><div class="card"><b id="summary">Ombor: 0 dona</b></div><div class="tilegrid">
+<button class="tile" onclick="page('in')"><span>📥</span>Prixod (Kirim)</button>
+<button class="tile" onclick="page('warehouse')"><span>📦</span>Ombor</button>
+<button class="tile" onclick="page('customers')"><span>👥</span>Mijozlar</button>
+<button class="tile" onclick="page('sale')"><span>🛒</span>Sotuv</button>
+<button class="tile" onclick="page('cash')"><span>💰</span>Kassa</button>
+<button class="tile" onclick="page('facturas')"><span>📑</span>Fakturalar</button><button class="tile" onclick="page('collection')"><span>📅</span>Undiruv</button>
+<button class="tile" onclick="page('history')"><span>📋</span>Tovarlar tarixi</button>
+<button class="tile" onclick="page('settings')"><span>⚙️</span>Sozlamalar</button>
+<button class="tile" onclick="page('deleted')"><span>🗑</span>O‘chirishga belgilanganlar</button>
+</div></section>
 <section id="in" class="hidden"><h2>📥 Tovar kirimi</h2><div class="card">
 <label>Hisob-faktura</label><input id="invoice" placeholder="SF-001">
 <label>Sana</label><input id="date" type="date">
@@ -19,35 +35,144 @@
 <button class="secondary full" onclick="autoBarcode()">Yangi barkod yaratish</button>
 <button class="full" onclick="addProduct()">+ Tovar qo‘shish</button></div>
 <div class="card"><b>Hisob-fakturadagi tovarlar</b><div id="draftList"></div><button class="full" onclick="commitInvoice()">✓ Prixodni tasdiqlash</button><button class="secondary full" onclick="clearDraft()">Ro‘yxatni tozalash</button></div>
-<div class="card"><h2>📚 Saqlangan hisob-fakturalar</h2><div id="invoiceList"></div></div><div class="card"><b>Excel importi</b><p class="muted">Keyingi bosqichda qo‘shiladi.</p></div></section>
+<div class="card"><h2>📚 Saqlangan hisob-fakturalar</h2><p class="muted">Dastlab bugungi fakturalar ko‘rinadi. Sana oralig‘ini tanlab oldingi fakturalarni ham ko‘rishingiz mumkin.</p><div class="invoice-date-filter"><div><label>Boshlanish sanasi</label><input type="date" id="invoicesFrom" onchange="renderInvoices()"></div><div><label>Tugash sanasi</label><input type="date" id="invoicesTo" onchange="renderInvoices()"></div></div><button class="secondary" onclick="resetInvoiceDates()">📅 Bugungi fakturalar</button><div id="invoiceList"></div></div><div class="card"><h2>📊 Exceldan prixod qilish</h2><p class="muted">Avval yuqorida hisob-faktura raqami, sana, yetkazib beruvchi va omborni kiriting. Excelda ustunlar: <b>Tovar nomi | Barkod | Xarid narxi</b>. Har bir dona alohida qatorda bo‘lishi kerak. Fayl tekshirilgach, mahsulotlar avval qoralamaga tushadi.</p><label>Excel yoki CSV fayl</label><input type="file" id="excelFile" accept=".xlsx,.xls,.csv,text/csv"><button class="secondary full" onclick="importExcel()">📥 Faylni tekshirish va kirim ro‘yxatiga qo‘shish</button><div id="excelStatus" class="muted" style="margin-top:10px"></div></div></section>
 <section id="invoiceDetail" class="hidden"><h2>📄 Hisob-faktura tafsilotlari</h2><div class="card"><div id="invoiceDetailBody"></div><button class="secondary full" onclick="page('in')">← Kirimga qaytish</button></div></section>
-<section id="warehouse" class="hidden"><h2>📦 Ombor</h2><div class="card"><label>Barkod yoki nom</label><div class="row"><input id="findBarcode" oninput="renderWarehouse()" placeholder="Qidirish"><button onclick="scan('findBarcode')">▣</button></div><div id="warehouseList"></div></div></section>
-<section id="sale" class="hidden"><h2>🛒 Sotuv</h2><div class="card"><label>Barkod</label><div class="row"><input id="saleBarcode" oninput="salePreview()" placeholder="Barkodni kiriting"><button onclick="scan('saleBarcode')">▣</button></div><div id="salePreview" class="muted"></div><label>Sotuv narxi</label><input id="salePrice" type="number" min="0"><button class="full" onclick="sell()">Sotuvni tasdiqlash</button></div></section>
-<section id="other" class="hidden"><h2>⚙️ Boshqa</h2><div class="card"><button class="full danger" onclick="page('deleted')">🗑 O‘chirishga belgilanganlar</button><button class="secondary full" onclick="page('history')">Tovarlar tarixi</button><div id="report"></div></div></section>
+<section id="warehouse" class="hidden"><h2>📦 Ombor</h2><div class="card">
+<label>Omborni tanlang</label><select id="warehouseFilter" onchange="renderWarehouse()"><option value="">Barcha omborlar</option></select>
+<div class="row" style="margin-top:14px"><button id="stockBtn" style="flex:1" onclick="warehouseMode='stock';renderWarehouse()">📦 Mavjud tovarlar</button><button id="soldBtn" class="secondary" style="flex:1" onclick="warehouseMode='sold';renderWarehouse()">🛒 Sotilgan tovarlar</button></div>
+<label>Barkod yoki nom</label><div class="row"><input id="findBarcode" oninput="renderWarehouse()" placeholder="Qidirish"><button onclick="scan('findBarcode')">▣</button></div><div id="warehouseList"></div></div></section>
+<section id="customers" class="hidden"><h2>👥 Mijozlar</h2><div class="card"><h3 id="customerFormTitle">Yangi mijoz</h3><p class="muted">F.I.O., pasport va JSHSHIR majburiy. Pasport rasmi ixtiyoriy. OCR alohida ulanadi; hozir ma’lumotlarni qo‘lda kiritish mumkin.</p>
+<label>F.I.O. *</label><input id="cFio" placeholder="FAMILIYA ISM OTASINING ISMI" oninput="this.value=this.value.toUpperCase()">
+<label>JSHSHIR (14 raqam) *</label><input id="cPinfl" inputmode="numeric" maxlength="14" placeholder="14 xonali raqam" oninput="this.value=this.value.replace(/\D/g,'').slice(0,14)">
+<label>Pasport seriya-raqami *</label><input id="cPassport" placeholder="AA1234567" oninput="this.value=this.value.toUpperCase().replace(/\s/g,'')">
+<label>Telefon (ixtiyoriy)</label><input id="cPhone" placeholder="+998">
+<label>Manzil (ixtiyoriy)</label><input id="cAddress">
+<button class="full" onclick="saveCustomer()" id="customerSaveBtn">✓ Mijozni saqlash</button><button class="secondary full" onclick="resetCustomerForm()">Formani tozalash</button></div>
+<div class="card"><h3>Mijozlar ro‘yxati</h3><input id="customerSearch" oninput="renderCustomers()" placeholder="F.I.O., JSHSHIR yoki pasport bo‘yicha qidirish"><div id="customerList"></div></div></section>
+<section id="sale" class="hidden"><h2>🛒 Sotuv — schyot-faktura</h2>
+<div class="card"><h3>1. Faktura va mijoz</h3><label>Schyot-faktura raqami * (avtomatik, qo‘lda o‘zgartirish mumkin)</label><input id="saleNumberInput" autocomplete="off" placeholder="SF-000001"><div class="muted" id="saleNumber"></div><label>Faktura izohi (ixtiyoriy)</label><textarea id="saleNote" rows="3" placeholder="Ushbu fakturaga tegishli izoh"></textarea><label>Mijozni qidirish *</label><input id="saleCustomerSearch" oninput="renderSaleCustomers()" placeholder="F.I.O., JSHSHIR yoki pasport"><div id="saleCustomerChoices"></div><div id="saleSelectedCustomer" class="notice">Mijoz tanlanmagan</div></div>
+<div class="card"><h3>2. Tovarlar</h3><label>Barkod *</label><div class="row"><input id="saleBarcode" oninput="salePreview()" onkeydown="if(event.key==='Enter'){event.preventDefault();addSaleItem()}" placeholder="Barkodni kiriting yoki skanerlang"><button onclick="scan('saleBarcode')">▣</button></div><div id="salePreview" class="muted"></div><div id="saleSuggestions" class="sale-suggestions" aria-live="polite"></div><label>Sotuv narxi (so‘m) *</label><input id="salePrice" type="number" min="0" placeholder="Narx"><button class="full" onclick="addSaleItem()">+ Fakturaga qo‘shish</button><div id="saleItems"></div><div id="saleTotal" class="notice"></div></div>
+<div class="card"><h3>3. To‘lov shartlari</h3><label>Sotuv turi</label><select id="saleKind" onchange="saleTermsChanged()"><option value="installment">Bo‘lib to‘lash</option><option value="cash">Naqd</option></select><div id="saleInstallmentFields"><label>Boshlang‘ich to‘lov (so‘m)</label><input id="saleAdvance" type="number" min="0" value="0" oninput="saleTermsChanged()"><label>Boshlang‘ich to‘lov usuli</label><select id="saleAdvanceMethod"><option value="naqd">Naqd</option><option value="karta">Karta</option><option value="xolis">Xolis</option><option value="terminal">Terminal</option></select><label>Necha oyga?</label><input id="saleMonths" type="number" min="1" max="60" value="6" oninput="saleTermsChanged()"><label>Birinchi to‘lov sanasi</label><input id="saleFirstDate" type="date" onchange="saleTermsChanged()"><label>Keyingi oylarda to‘lov sanasi (1–31)</label><input id="saleDay" type="number" min="1" max="31" value="15" oninput="saleTermsChanged()"><p class="muted">31-sana mavjud bo‘lmagan oyda oyning oxirgi kuni olinadi.</p><label><input type="checkbox" id="saleManual" onchange="saleTermsChanged()" style="width:auto"> Grafikni qo‘lda o‘zgartirish</label><div id="saleSchedule"></div></div><label>To‘liq sotuv yoki bugungi to‘lov usuli</label><select id="salePayMethod"><option value="naqd">Naqd</option><option value="karta">Karta</option><option value="xolis">Xolis</option><option value="terminal">Terminal</option></select><button class="full" onclick="confirmSaleInvoice()">✓ Fakturani tasdiqlash</button></div>
+<div class="card"><h3>📄 Sotuv fakturalari tarixi</h3><p class="muted">Dastlab faqat bugungi fakturalar ko‘rinadi. Sana oralig‘ini tanlasangiz, har bir kun alohida guruhlanadi.</p><div class="row" style="display:flex;flex-wrap:wrap;gap:10px;align-items:end"><label>Boshlanish sanasi<input type="date" id="saleHistoryFrom" onchange="renderSaleInvoices()"></label><label>Tugash sanasi<input type="date" id="saleHistoryTo" onchange="renderSaleInvoices()"></label><button class="secondary" onclick="saleHistoryToday()">Bugungi fakturalar</button></div><div id="saleReportSummary"></div><div id="saleInvoiceList"></div></div></section>
+<section id="cash" class="hidden"><div id="cashHome"><h2>💰 Kassa</h2><div class="tilegrid cash-menu">
+<button class="tile" onclick="cashTab('balance')"><span>👛</span>Kassa qoldig‘i</button>
+<button class="tile" onclick="cashTab('income')"><span>⬇️</span>Kirim orderi</button>
+<button class="tile" onclick="cashTab('expense')"><span>⬆️</span>Chiqim orderi</button>
+<button class="tile" onclick="cashTab('register')"><span>📖</span>Kassa reestri</button>
+<button class="tile" onclick="cashTab('payments')"><span>🧾</span>To‘lovlar tarixi</button>
+<button class="tile" onclick="cashTab('report')"><span>🖨️</span>Hisobot / Chop etish</button>
+<button class="tile" onclick="cashTab('transfer')"><span>🔄</span>Asosiy kassaga pul topshirish</button>
+<button class="tile" onclick="cashTab('approvals')"><span>✅</span>Asosiy kassa — tasdiqlash</button>
+</div><div id="cashDayStatus" class="notice" style="margin-top:12px"></div><button class="full danger" style="margin-top:10px" onclick="cashCloseToday()">🔒 Bugungi kunni yopish</button><button class="full secondary" style="margin-top:10px" onclick="cashTab('days')">🔑 Admin — Yopilgan kunlarni boshqarish</button></div><div id="cashDetail" class="hidden"><button class="secondary" onclick="cashBack()" style="margin-bottom:12px">← Kassa menyusiga qaytish</button><div id="cashContent" class="card"></div></div></section>
+<section id="facturas" class="hidden"><h2>📑 Fakturalar</h2><div class="card"><div class="row" style="display:flex;gap:8px;flex-wrap:wrap"><button id="activeInvoiceBtn" onclick="setInvoiceStatusView('active')">🟢 Aktiv fakturalar</button><button id="closedInvoiceBtn" class="secondary" onclick="setInvoiceStatusView('closed')">✓ Yopilgan fakturalar</button></div><p class="muted">Naqd fakturalar to‘langan deb yopiladi. Nasiya faktura faqat to‘liq to‘lov qayd etilganda yopiladi. Qisman to‘lovli faktura aktiv qoladi.</p><label>Faktura yoki mijozni qidirish</label><input id="statusInvoiceSearch" placeholder="F.I.O., JSHSHIR, pasport yoki SF-000001" oninput="renderInvoiceStatusList()"><div id="statusInvoiceSummary" class="notice"></div><div id="statusInvoiceList"></div></div></section>
+<section id="collection" class="hidden"><h2>📅 Undiruv</h2><div class="card"><p class="muted">Tanlangan sanagacha muddati kelgan barcha to‘lanmagan oylik to‘lovlar, shu jumladan eski qarzdorliklar.</p><label>Qaysi sanagacha?</label><input type="date" id="collectionUntil" onchange="renderCollection()"><button class="secondary" onclick="collectionToday()">📅 Bugungi sanagacha</button><div id="collectionSummary" class="notice"></div><div id="collectionList"></div><div class="collection-report"><h3>📊 Undiruv hisoboti</h3><label>Saralash</label><select id="collectionSort" onchange="renderCollectionReport()"><option value="due">To‘lov muddati bo‘yicha (o‘sib borish)</option><option value="customer">Mijoz bo‘yicha (A–Z)</option><option value="invoice">Faktura raqami bo‘yicha (o‘sib borish)</option></select><div id="collectionReportSummary" class="notice"></div><div id="collectionReportList"></div><button class="secondary full" onclick="printCollectionReport()">🖨 Hisobotni chop etish / PDF</button></div></div></section><section id="other" class="hidden"><h2>⚙️ Boshqa</h2><div class="card"><button class="secondary full" onclick="page('settings')">⚙️ Sozlamalar — omborlarni boshqarish</button><button class="full danger" onclick="page('deleted')">🗑 O‘chirishga belgilanganlar</button><button class="secondary full" onclick="page('history')">Tovarlar tarixi</button><button class="secondary full" onclick="page('customers')">👥 Mijozlar</button><button class="secondary full" onclick="page('facturas')">📑 Fakturalar — aktiv / yopilgan</button><button class="secondary full" onclick="page('collection')">📅 Undiruv ro‘yxati</button><div id="report"></div></div></section>
+<section id="settings" class="hidden"><h2>⚙️ Sozlamalar</h2><div class="card"><h2>🏬 Omborlarni boshqarish</h2><label>Yangi ombor nomi</label><input id="newWarehouse" placeholder="Masalan, Nurafshon ombori"><button class="full" onclick="addWarehouse()">+ Ombor qo‘shish</button><div id="warehouseSettingsList"></div></div><button class="secondary full" onclick="page('other')">← Orqaga</button></section>
 <section id="history" class="hidden"><h2>🧾 Tovarlar tarixi</h2><div class="card"><div id="historyList"></div></div></section>
 <section id="deleted" class="hidden"><h2>🗑 O‘chirishga belgilanganlar</h2><div class="card"><div id="deletedList"></div></div></section>
+<div id="editPanel" role="dialog" aria-modal="true" aria-label="Tahrirlash"><div class="card"><h2 id="editTitle">✎ Tahrirlash</h2><p id="editHint" class="muted"></p>
+<label>Hisob-faktura raqami</label><input id="eInvoice">
+<label>Kirim sanasi</label><input id="eDate" type="date">
+<label>Yetkazib beruvchi</label><input id="eSupplier">
+<label>Ombor</label><select id="eLocation"><option>Asosiy ombor</option><option>MUMTAZ</option><option>FURSA</option><option>BEST</option></select>
+<div id="editProductFields"><label>Tovar nomi</label><input id="eName"><label>Xarid narxi (so‘m)</label><input id="eCost" type="number" min="0"><label>Barkod</label><input id="eBarcode"><p class="muted">Barkod almashtirilsa, eski barkod tarixda band qoladi.</p></div>
+<div class="row" style="margin-top:18px"><button class="secondary" onclick="closeEdit()">Bekor qilish</button><button onclick="saveEdit()">✓ Saqlash</button></div></div></div>
 <div id="cameraBox" class="card"><b>Kamera skaneri</b><div id="reader" style="width:100%;min-height:240px"></div><button class="danger full" onclick="stopCamera()">Yopish</button></div>
 </main><nav>
 <button data-p="home" onclick="page('home')"><span>⌂</span>Bosh sahifa</button>
 <button data-p="in" onclick="page('in')"><span>⊕</span>Kirim</button>
 <button data-p="warehouse" onclick="page('warehouse')"><span>▤</span>Ombor</button>
 <button data-p="sale" onclick="page('sale')"><span>🛒</span>Sotuv</button>
+<button data-p="cash" onclick="page('cash')"><span>💰</span>Kassa</button>
 <button data-p="other" onclick="page('other')"><span>⚙</span>Boshqa</button>
 </nav>
 <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
 "use strict";
-const KEY="sher_ai_nasiya_demo_v1", DKEY="sher_ai_nasiya_draft_v2";
+const KEY="sher_ai_nasiya_demo_v1", DKEY="sher_ai_nasiya_draft_v2", BKEY="sher_ai_nasiya_retired_barcodes_v10";
 const $=id=>document.getElementById(id);
+// Hozirgi versiya faqat adminning lokal sinovi. Xodimlar va rollar keyin qo‘shiladi.
+function canDo(action){return true}
+function requirePermission(action){return true}
+function actionButtons(editCall,deleteCall,restore=false){return '<div class="actions">'+(canDo("edit")&&!restore?'<button class="secondary" onclick="'+editCall+'">✎ Tahrirlash</button>':'')+(canDo("delete")?'<button class="danger" onclick="'+deleteCall+'">'+(restore?'↩ Qaytarish':'🗑 Belgilash')+'</button>':'')+'</div>'}
+
+// Omborlar alohida saqlanadi; mavjud Prixod ma’lumotlari va funksiyalari saqlanadi.
+const WKEY="sher_ai_nasiya_warehouses_v13";
+const DEFAULT_WAREHOUSES=["Asosiy ombor","MUMTAZ","FURSA","BEST"];
+let warehouseMode="stock";
+function readWarehouses(){try{const a=JSON.parse(localStorage.getItem(WKEY)||"null");return Array.isArray(a)?a.filter(x=>typeof x==="string"&&x.trim()):null}catch(e){return null}}
+let warehouses=readWarehouses()||DEFAULT_WAREHOUSES.slice();
+const WMKEY="sher_ai_nasiya_marked_warehouses_v13_1";
+let markedWarehouses=[];
+try{const stored=JSON.parse(localStorage.getItem(WMKEY)||"[]");if(Array.isArray(stored))markedWarehouses=stored.filter(x=>typeof x==="string")}catch(e){}
+function saveMarkedWarehouses(){localStorage.setItem(WMKEY,JSON.stringify(markedWarehouses))}
+function isWarehouseMarked(name){return markedWarehouses.includes(name)}
+function syncWarehouseOptions(){
+ const known=[...new Set([...warehouses,...data.map(x=>x.location),...draft.map(x=>x.location)].filter(x=>x&&!isWarehouseMarked(x)))];
+ const selected={location:$("location").value,eLocation:$("eLocation").value,warehouseFilter:$("warehouseFilter").value};
+ for(const id of ["location","eLocation","warehouseFilter"]){
+  const sel=$(id);sel.innerHTML="";
+  if(id==="warehouseFilter"){const opt=document.createElement("option");opt.value="";opt.textContent="Barcha omborlar";sel.add(opt)}
+  for(const name of known){const opt=document.createElement("option");opt.value=name;opt.textContent=name;sel.add(opt)}
+  if([...sel.options].some(o=>o.value===selected[id]))sel.value=selected[id];
+ }
+}
+function saveWarehouses(){try{localStorage.setItem(WKEY,JSON.stringify(warehouses));syncWarehouseOptions();renderWarehouseSettings();renderWarehouse();return true}catch(e){notify("Omborlar ro‘yxati saqlanmadi!",true);return false}}
+function addWarehouse(){const input=$("newWarehouse"),name=input.value.trim();if(!name){notify("Ombor nomini kiriting.",true);return}if(warehouses.some(x=>x.toLocaleLowerCase()===name.toLocaleLowerCase())){notify("Bu ombor mavjud!",true);return}warehouses.push(name);if(saveWarehouses()){input.value="";notify("Ombor qo‘shildi.")}}
+function renameWarehouse(i){const old=warehouses[i];if(!old||isWarehouseMarked(old))return;const name=prompt("Omborning yangi nomi:",old)?.trim();if(name===undefined||name===old)return;if(!name){notify("Ombor nomi bo‘sh bo‘lmasin.",true);return}if(warehouses.some((x,j)=>j!==i&&x.toLocaleLowerCase()===name.toLocaleLowerCase())){notify("Bu ombor nomi mavjud!",true);return}
+ const dataOld=data.map(x=>x.location),draftOld=draft.map(x=>x.location);const prev=warehouses.slice();
+ warehouses[i]=name;for(const x of [...data,...draft])if(x.location===old)x.location=name;
+ try{localStorage.setItem(KEY,JSON.stringify(data));localStorage.setItem(DKEY,JSON.stringify(draft));localStorage.setItem(WKEY,JSON.stringify(warehouses));}catch(e){warehouses=prev;data.forEach((x,j)=>x.location=dataOld[j]);draft.forEach((x,j)=>x.location=draftOld[j]);notify("Saqlashda xatolik yuz berdi!",true);return}
+ const selectedIds=["location","eLocation","warehouseFilter"].filter(id=>$(id).value===old);
+ syncWarehouseOptions();for(const id of selectedIds)$(id).value=name;renderAll();notify("Ombor nomi va tegishli tovarlar yangilandi.");
+}
+function deleteWarehouse(i){
+ const name=warehouses[i];if(!name||isWarehouseMarked(name))return;
+ if([...data,...draft].some(x=>x.location===name)){
+  notify("Bu omborda tovar yoki kirim tarixi mavjud. Avval ma’lumotlarni tekshiring; omborni belgilash mumkin emas.",true);return;
+ }
+ if(!confirm("Rostdan ham «"+name+"» omborini o‘chirishga belgilamoqchimisiz?"))return;
+ markedWarehouses.push(name);
+ saveMarkedWarehouses();syncWarehouseOptions();renderWarehouseSettings();renderWarehouse();renderDeleted();
+ notify("Ombor qizil bilan o‘chirishga belgilandi.");
+}
+function restoreWarehouse(name){
+ if(!isWarehouseMarked(name))return;
+ if(!confirm("Haqiqatan ham «"+name+"» omborini qayta tiklamoqchimisiz?"))return;
+ markedWarehouses=markedWarehouses.filter(x=>x!==name);
+ saveMarkedWarehouses();syncWarehouseOptions();renderWarehouseSettings();renderWarehouse();renderDeleted();
+ notify("Ombor qayta tiklandi.");
+}
+function finalDeleteWarehouse(name){
+ if(!isWarehouseMarked(name))return;
+ if([...data,...draft].some(x=>x.location===name)){notify("Ombor bilan bog‘liq ma’lumotlar mavjud. Yakuniy o‘chirish mumkin emas.",true);return}
+ if(!confirm("Rostdan ham «"+name+"» omborini BUTUNLAY o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi."))return;
+ const previous=warehouses.slice(),previousMarked=markedWarehouses.slice();
+ warehouses=warehouses.filter(x=>x!==name);
+ markedWarehouses=markedWarehouses.filter(x=>x!==name);
+ try{localStorage.setItem(WKEY,JSON.stringify(warehouses));saveMarkedWarehouses()}
+ catch(e){warehouses=previous;markedWarehouses=previousMarked;notify("Saqlashda xatolik!",true);return}
+ syncWarehouseOptions();renderWarehouseSettings();renderWarehouse();renderDeleted();
+ notify("Ombor butunlay o‘chirildi.");
+}
+function renderWarehouseSettings(){
+ const el=$("warehouseSettingsList");if(!el)return;
+ const byName=name=>JSON.stringify(name).replace(/"/g,"&quot;");
+ el.innerHTML="<h3>Omborlar ("+warehouses.length+")</h3>"+
+ warehouses.map((name,i)=>isWarehouseMarked(name)?
+ '<div class="item marked"><b>'+esc(name)+'</b><div class="actions"><button class="secondary" onclick="restoreWarehouse('+byName(name)+')">↩ Qayta tiklash</button></div></div>':
+ '<div class="item"><b>'+esc(name)+'</b><div class="actions"><button class="secondary" onclick="renameWarehouse('+i+')">✎ Tahrirlash</button><button class="danger" onclick="deleteWarehouse('+i+')">🗑 O‘chirish</button></div></div>').join("");
+}
+
 const read=k=>{try{const a=JSON.parse(localStorage.getItem(k)||"[]");return Array.isArray(a)?a:[]}catch(e){return []}};
-let data=read(KEY),draft=read(DKEY),stream=null,timer=null,scanning=false,selectedInvoice=null;
+let data=read(KEY),draft=read(DKEY),retired=read(BKEY),stream=null,timer=null,scanning=false,selectedInvoice=null,editContext=null;
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const money=n=>Number(n||0).toLocaleString("uz-UZ");
 const sortBarcode=(a,b)=>String(a.barcode).localeCompare(String(b.barcode),undefined,{numeric:true});
 let errorTimer=null;function notify(s,bad=false){if(bad){$("errorText").textContent=s;$("errorOverlay").classList.add("show");clearTimeout(errorTimer);errorTimer=setTimeout(()=>$("errorOverlay").classList.remove("show"),2600);return}$("msg").innerHTML='<div class="notice">'+esc(s)+'</div>';setTimeout(()=>{$("msg").innerHTML=""},3500)}
-function persist(){try{localStorage.setItem(KEY,JSON.stringify(data));localStorage.setItem(DKEY,JSON.stringify(draft));renderAll();return true}catch(e){notify("Xotiraga saqlab bo‘lmadi!",true);return false}}
-function page(id){stopCamera();document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));$(id).classList.remove("hidden");document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.p===id));renderAll();window.scrollTo(0,0)}
-function used(b,except=null){return [...data,...draft].some(x=>x!==except&&x.barcode===b)}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(data));localStorage.setItem(DKEY,JSON.stringify(draft));localStorage.setItem(BKEY,JSON.stringify(retired));renderAll();return true}catch(e){notify("Xotiraga saqlab bo‘lmadi!",true);return false}}
+function page(id){stopCamera();document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));$(id).classList.remove("hidden");document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.p===id));renderAll();if(id==="cash"){cashBack();cashRenderDayStatus()}window.scrollTo(0,0)}
+function used(b,except=null){return retired.includes(b)||[...data,...draft].some(x=>x!==except&&x.barcode===b)}
 function autoBarcode(){let b;do{b="SH"+Date.now().toString(36).toUpperCase()+Math.floor(Math.random()*100000)}while(used(b));$("inBarcode").value=b}
 function addProduct(){
  const barcode=$("inBarcode").value.trim(),name=$("product").value.trim(),invoice=$("invoice").value.trim(),date=$("date").value,cost=Number($("cost").value),supplier=$("supplier").value.trim(),location=$("location").value;
@@ -61,34 +186,417 @@ function addProduct(){
 }
 function renderDraft(){
  const active=draft.filter(x=>!x.deleteMarked),sum=active.reduce((a,x)=>a+Number(x.cost),0);
- const rows=draft.map((x,i)=>({...x,index:i})).sort(sortBarcode).map((x,i)=>'<tr class="'+(x.deleteMarked?"marked":"")+'"><td>'+(i+1)+'</td><td>'+esc(x.name)+'</td><td>'+esc(x.barcode)+'</td><td>1</td><td>'+money(x.cost)+'</td><td>'+money(x.cost)+'</td><td><div class="actions"><button class="secondary" onclick="editDraft('+x.index+')">✎</button><button class="danger" onclick="markDraft('+x.index+')">'+(x.deleteMarked?"↩":"🗑")+'</button></div></td></tr>').join("");
+ const rows=draft.map((x,i)=>({...x,index:i})).sort(sortBarcode).map((x,i)=>'<tr class="'+(x.deleteMarked?"marked":"")+'"><td>'+(i+1)+'</td><td>'+esc(x.name)+'</td><td>'+esc(x.barcode)+'</td><td>1</td><td>'+money(x.cost)+'</td><td>'+money(x.cost)+'</td><td><div class="actions">'+(canDo("edit")&&!x.deleteMarked?'<button class="secondary" onclick="editDraft('+x.index+')">✎</button>':'')+(canDo("delete")?'<button class="danger" onclick="markDraft('+x.index+')">'+(x.deleteMarked?"↩":"🗑")+'</button>':'')+'</div></td></tr>').join("");
  $("draftList").innerHTML='<p class="muted">Faol: '+active.length+' dona · '+money(sum)+' so‘m · Belgilangan: '+(draft.length-active.length)+'</p>'+(draft.length?'<div class="scroll"><table><thead><tr><th>№</th><th>Mahsulot</th><th>Barkod</th><th>Soni</th><th>Narxi</th><th>Summa</th><th>Amal</th></tr></thead><tbody>'+rows+'</tbody></table></div>':"<p class='muted'>Hali tovar yo‘q</p>");
 }
-function editDraft(i){const x=draft[i];if(!x||x.deleteMarked){notify("Avval belgini qaytaring.",true);return}let name=prompt("Tovar nomi",x.name);if(name===null)return;name=name.trim();if(!name){notify("Nom bo‘sh bo‘lmasin",true);return}let b=prompt("Barkod",x.barcode);if(b===null)return;b=b.trim();if(!b||used(b,x)){notify("Barkod bo‘sh yoki avval ishlatilgan!",true);return}let price=prompt("Xarid narxi",x.cost);if(price===null)return;if(price.trim()===""||!Number.isFinite(Number(price))||Number(price)<0){notify("Narx noto‘g‘ri",true);return}Object.assign(x,{name,barcode:b,cost:Number(price)});persist();notify("Tahrirlandi")}
-function markDraft(i){if(!draft[i])return;draft[i].deleteMarked=!draft[i].deleteMarked;persist()}
-function clearDraft(){if(!draft.length)return;if(!confirm("Ro‘yxatni tozalash va barkodlarni tarixda band saqlash?"))return;data.push(...draft.map(x=>({...x,finalDeleted:true,deleteMarked:false,neverCommitted:true})));draft=[];persist()}
+function editDraft(i){if(!requirePermission("edit"))return;const x=draft[i];if(!x||x.deleteMarked){notify("Avval belgini qaytaring.",true);return}openEdit("draft",i)}
+function markDraft(i){if(!requirePermission("delete"))return;if(!draft[i])return;if(!confirm(draft[i].deleteMarked?"Haqiqatan ham ushbu tovarni qayta tiklamoqchimisiz?":"Rostdan ham ushbu tovarni o‘chirishga belgilamoqchimisiz?"))return;draft[i].deleteMarked=!draft[i].deleteMarked;persist()}
+function clearDraft(){if(!requirePermission("delete"))return;if(!draft.length)return;if(!confirm("Ro‘yxatni tozalash va barkodlarni tarixda band saqlash?"))return;data.push(...draft.map(x=>({...x,finalDeleted:true,deleteMarked:false,neverCommitted:true})));draft=[];persist()}
 function commitInvoice(){const active=draft.filter(x=>!x.deleteMarked);if(!active.length){notify("Faol tovar yo‘q!",true);return}if(!confirm(active.length+" dona tovar omborga kiritilsinmi?"))return;data.push(...active);draft=draft.filter(x=>x.deleteMarked);persist();if(!draft.length){$("invoice").value="";$("supplier").value=""}notify("Prixod tasdiqlandi!")}
-function renderWarehouse(){const q=$("findBarcode").value.toLowerCase();const a=data.filter(x=>!x.sold&&!x.deleteMarked&&!x.finalDeleted&&(x.barcode.toLowerCase().includes(q)||x.name.toLowerCase().includes(q))).sort(sortBarcode);$("warehouseList").innerHTML="<p><b>Omborda: "+a.length+" dona</b></p>"+a.map(x=>'<div class="item"><b>'+esc(x.name)+'</b><div class="muted">Barkod: '+esc(x.barcode)+' · '+esc(x.location)+'</div><div>'+money(x.cost)+' so‘m</div></div>').join("")}
-function salePreview(){const b=$("saleBarcode").value.trim(),x=data.find(z=>z.barcode===b);$("salePreview").textContent=!b?"Barkod kiriting":!x?"Barkod topilmadi":x.deleteMarked||x.finalDeleted?"O‘chirishga belgilangan":x.sold?"Allaqachon sotilgan":x.name+" — "+x.location}
-function sell(){const b=$("saleBarcode").value.trim(),x=data.find(z=>z.barcode===b),price=Number($("salePrice").value);if(!x||x.sold||x.deleteMarked||x.finalDeleted){notify("Bu barkodni sotish mumkin emas!",true);return}if($("salePrice").value===""||!Number.isFinite(price)||price<0){notify("Sotuv narxini kiriting.",true);return}x.sold=true;x.salePrice=price;x.soldAt=new Date().toISOString();persist();$("saleBarcode").value="";$("salePrice").value="";notify("Sotuv bajarildi")}
+function renderWarehouse(){
+ const q=$("findBarcode").value.trim().toLowerCase(),loc=$("warehouseFilter").value;
+ const sold=warehouseMode==="sold";
+ $("stockBtn").classList.toggle("secondary",sold);$("soldBtn").classList.toggle("secondary",!sold);
+ const a=data.filter(x=>!x.deleteMarked&&!x.finalDeleted&&Boolean(x.sold)===sold&&(!loc||x.location===loc)&&(String(x.barcode).toLowerCase().includes(q)||String(x.name).toLowerCase().includes(q))).sort(sortBarcode);
+ $("warehouseList").innerHTML="<p><b>"+(sold?"Sotilgan":"Mavjud")+": "+a.length+" dona</b></p>"+(a.map(x=>'<div class="item"><b>'+esc(x.name)+'</b><div class="muted">Barkod: '+esc(x.barcode)+' · Ombor: '+esc(x.location)+'</div><div>Xarid narxi: '+money(x.cost)+' so‘m</div>'+(sold?'<div>Sotuv narxi: '+money(x.salePrice)+' so‘m · '+esc((x.soldAt||"").slice(0,10))+'</div>':'')+'</div>').join("")||'<p class="muted">Ushbu tanlov bo‘yicha tovarlar topilmadi.</p>');
+}
+const SALE_KEY="sher_ai_nasiya_sales_v14";
+let saleInvoices=[];try{const v=JSON.parse(localStorage.getItem(SALE_KEY)||"[]");if(Array.isArray(v))saleInvoices=v}catch(e){}
+let saleItems=[],saleCustomerPinfl="",saleSchedule=[],saleScheduleSignature="";
+const saleArg=x=>JSON.stringify(x).replace(/"/g,"&quot;");
+function saleDateLocal(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function nextSaleNumber(){let n=0;for(const x of saleInvoices){const m=/^SF-(\d+)$/.exec(x.number||"");if(m)n=Math.max(n,Number(m[1]))}return "SF-"+String(n+1).padStart(6,"0")}
+function currentSaleNumber(){return ($("saleNumberInput")?.value||"").trim()}
+function ensureSaleNumber(){const el=$("saleNumberInput");if(el&&!el.value.trim())el.value=nextSaleNumber()}
+function editSavedSaleInvoiceNumber(num){
+ const x=saleInvoices.find(z=>z.number===num);if(!x)return;
+ const raw=prompt("Faktura raqamini o‘zgartiring:",num);if(raw===null)return;
+ const next=raw.trim().toUpperCase();
+ if(!next||next.length>60){notify("Faktura raqamini to‘g‘ri kiriting.",true);return}
+ if(next!==num&&saleInvoices.some(z=>z.number.toUpperCase()===next)){notify("Bu faktura raqami avval mavjud!",true);return}
+ if(next===num)return;
+ if(!confirm("Faktura raqamini "+num+" dan "+next+" ga o‘zgartirasizmi?"))return;
+ const oldSales=JSON.stringify(saleInvoices),oldData=JSON.stringify(data);
+ x.number=next;
+ data.forEach(z=>{if(z.saleInvoice===num)z.saleInvoice=next});
+ try{localStorage.setItem(SALE_KEY,JSON.stringify(saleInvoices));localStorage.setItem(KEY,JSON.stringify(data))}
+ catch(e){saleInvoices=JSON.parse(oldSales);data=JSON.parse(oldData);notify("Saqlab bo‘lmadi.",true);return}
+ renderAll();notify("Faktura raqami yangilandi.");
+}
+function editSavedSaleInvoiceNote(num){
+ const x=saleInvoices.find(z=>z.number===num);if(!x)return;
+ const raw=prompt("Faktura izohi:",x.note||"");if(raw===null)return;
+ if(raw.length>3000){notify("Izoh juda uzun.",true);return}
+ const old=x.note;x.note=raw.trim();
+ try{localStorage.setItem(SALE_KEY,JSON.stringify(saleInvoices))}
+ catch(e){x.note=old;notify("Saqlab bo‘lmadi.",true);return}
+ renderAll();notify("Faktura izohi saqlandi.");
+}
+function saleTotal(){return saleItems.filter(x=>!x.deleteMarked).reduce((a,x)=>a+Number(x.price),0)}
+function renderSaleCustomers(){const el=$("saleCustomerChoices");if(!el)return;const q=$("saleCustomerSearch").value.trim().toUpperCase();el.innerHTML=q?customers.filter(x=>!x.deleteMarked&&[x.fio,x.pinfl,x.passport].some(v=>String(v||"").toUpperCase().includes(q))).slice(0,10).map(x=>'<div class="item"><b>'+esc(x.fio)+'</b><div class="muted">'+esc(x.pinfl)+' · '+esc(x.passport)+'</div><button class="secondary" onclick="chooseSaleCustomer('+saleArg(x.pinfl)+')">Tanlash</button></div>').join("")||'<p class="muted">Mijoz topilmadi</p>':""}
+function chooseSaleCustomer(p){const c=customers.find(x=>x.pinfl===p&&!x.deleteMarked);if(!c)return;saleCustomerPinfl=p;$("saleSelectedCustomer").innerHTML=esc(c.fio)+" · JSHSHIR: "+esc(p)+(customerBlacklisted(p)?'<div class="blacklist">⚠️ QORA RO‘YXAT! Mijozning kamida bitta fakturasida 31 kundan oshgan qarzdorlik mavjud. Yangi sotuvni tasdiqlashdan oldin tekshiring.</div>':"");$("saleCustomerSearch").value="";renderSaleCustomers()}
+function chooseSaleSuggestion(barcode){
+ const input=$("saleBarcode");if(!input)return;
+ input.value=barcode;
+ salePreview();
+ $("saleSuggestions").innerHTML="";
+ $("salePrice").focus();
+}
+function salePreview(){
+ const el=$("salePreview"),list=$("saleSuggestions");if(!el||!list)return;
+ const b=$("saleBarcode").value.trim(),q=b.toLocaleLowerCase();
+ const x=data.find(z=>String(z.barcode)===b);
+ if(!b){el.textContent="Barkodni yoki tovar nomini kiriting";list.innerHTML="";return}
+ const matches=data.filter(z=>!z.sold&&!z.deleteMarked&&!z.finalDeleted&&!saleItems.some(y=>y.barcode===z.barcode)&&
+  (String(z.barcode||"").toLocaleLowerCase().includes(q)||String(z.name||"").toLocaleLowerCase().includes(q)))
+  .sort((a,b)=>Number(String(b.barcode).toLocaleLowerCase().startsWith(q))-Number(String(a.barcode).toLocaleLowerCase().startsWith(q))||String(a.barcode).localeCompare(String(b.barcode))).slice(0,15);
+ el.textContent=x?(saleItems.some(y=>y.barcode===b)?"⚠️ Bu barkod fakturada mavjud!":x.deleteMarked||x.finalDeleted?"O‘chirishga belgilangan":x.sold?"Bu tovar avval sotilgan":x.name+" — "+x.location):matches.length?"Omborda mavjud mos tovarlardan tanlang:":"Mos mavjud tovar topilmadi";
+ list.innerHTML=matches.map(z=>'<button type="button" class="sale-suggestion" onclick="chooseSaleSuggestion('+saleArg(z.barcode)+')"><strong>'+esc(z.barcode)+'</strong><span>'+esc(z.name||"Tovar")+' · '+esc(z.location||"Ombor")+'</span></button>').join('');
+}
+function addSaleItem(){const b=$("saleBarcode").value.trim(),x=data.find(z=>z.barcode===b),raw=$("salePrice").value,price=Number(raw);if(saleItems.some(y=>y.barcode===b)){notify("Bu barkod fakturaga avval qo‘shilgan!",true);return}if(!x||x.sold||x.deleteMarked||x.finalDeleted){notify("Barkod topilmadi yoki tovarni sotish mumkin emas!",true);return}if(!raw||!Number.isFinite(price)||price<0){notify("Sotuv narxini to‘g‘ri kiriting.",true);return}saleItems.push({barcode:b,name:x.name,location:x.location,price});$("saleBarcode").value="";$("salePrice").value="";renderSaleItems();salePreview();$("saleBarcode").focus()}
+function removeSaleItem(b){const x=saleItems.find(z=>z.barcode===b);if(!x||x.deleteMarked)return;if(!confirm("Rostdan ham o‘chirmoqchimisiz?"))return;x.deleteMarked=true;renderSaleItems();renderDeleted();notify("Tovar qizil bilan o‘chirishga belgilandi.")}
+function restoreSaleItem(b){const x=saleItems.find(z=>z.barcode===b);if(!x||!x.deleteMarked)return;if(!confirm("Haqiqatan qayta tiklamoqchimisiz?"))return;x.deleteMarked=false;renderSaleItems();renderDeleted()}
+function finalRemoveSaleItem(b){const x=saleItems.find(z=>z.barcode===b);if(!x||!x.deleteMarked)return;if(!confirm("Rostdan ham BUTUNLAY o‘chirmoqchimisiz?"))return;saleItems=saleItems.filter(z=>z.barcode!==b);renderSaleItems();renderDeleted();salePreview()}
+function editSaleItem(b){const x=saleItems.find(z=>z.barcode===b);if(!x||x.deleteMarked)return;const raw=prompt("Sotuv narxini tahrirlash (so‘m):",String(x.price));if(raw===null)return;const v=Number(raw.trim());if(!raw.trim()||!Number.isFinite(v)||v<0||!Number.isSafeInteger(v)){notify("Narxni to‘g‘ri kiriting.",true);return}if(!confirm("Tovar narxini "+money(v)+" so‘mga o‘zgartirasizmi?"))return;x.price=v;renderSaleItems()}
+function renderSaleItems(){const el=$("saleItems");if(!el)return;el.innerHTML=saleItems.map((x,i)=>'<div class="item'+(x.deleteMarked?' marked':'')+'"><b>'+(i+1)+'. '+esc(x.name)+'</b><div class="muted">'+esc(x.barcode)+' · '+esc(x.location)+'</div><div>'+money(x.price)+' so‘m</div>'+(x.deleteMarked?'<div class="muted">O‘chirishga belgilangan</div><div class="actions"><button class="secondary" onclick="restoreSaleItem('+saleArg(x.barcode)+')">↩ Qayta tiklash</button></div>':'<div class="actions"><button class="secondary" onclick="editSaleItem('+saleArg(x.barcode)+')">✎ Tahrirlash</button><button class="danger" onclick="removeSaleItem('+saleArg(x.barcode)+')">🗑 O‘chirish</button></div>')+'</div>').join("")||'<p class="muted">Hali tovar qo‘shilmagan.</p>';$("saleTotal").textContent="Jami: "+money(saleTotal())+" so‘m";saleTermsChanged()}
+
+function saleTermsChanged(){const f=$("saleInstallmentFields");if(!f)return;const installment=$("saleKind").value==="installment";f.classList.toggle("hidden",!installment);if(!installment)return;const total=saleTotal(),advance=Number($("saleAdvance").value),months=Number($("saleMonths").value),day=Number($("saleDay").value),first=$("saleFirstDate").value;if(!Number.isFinite(advance)||advance<0||advance>total||!Number.isInteger(months)||months<1||months>60||!Number.isInteger(day)||day<1||day>31||!first){$("saleSchedule").innerHTML='<p class="notice bad">Boshlang‘ich to‘lov, oylar va sanani tekshiring.</p>';return}const remain=total-advance,signature=[remain,months,day,first].join("|");if(signature!==saleScheduleSignature){const base=Math.floor(remain/months),extra=remain-base*months;const [y,m,d]=first.split("-").map(Number);saleSchedule=Array.from({length:months},(_,i)=>{const yy=y+Math.floor((m-1+i)/12),mm=(m-1+i)%12;const targetDay=i===0?d:day;const max=new Date(yy,mm+1,0).getDate();return {date:saleDateLocal(new Date(yy,mm,Math.min(targetDay,max))),amount:base+(i===months-1?extra:0)}});saleScheduleSignature=signature}renderSaleSchedule()}
+function editSaleSchedule(i,key,value){if(!saleSchedule[i])return;saleSchedule[i][key]=key==="amount"?Number(value):value;renderSaleScheduleStatus()}
+function renderSaleSchedule(){const el=$("saleSchedule"),manual=$("saleManual").checked;el.innerHTML='<p><b>Qolgan qarz: '+money(saleTotal()-Number($("saleAdvance").value))+' so‘m</b></p><div class="scroll"><table><tr><th>№</th><th>Sana</th><th>Summa</th></tr>'+saleSchedule.map((r,i)=>'<tr><td>'+(i+1)+'</td><td>'+(manual?'<input type="date" value="'+esc(r.date)+'" onchange="editSaleSchedule('+i+',&#39;date&#39;,this.value)" style="min-width:145px">':esc(r.date))+'</td><td>'+(manual?'<input type="number" min="0" value="'+r.amount+'" oninput="editSaleSchedule('+i+',&#39;amount&#39;,this.value)" style="min-width:125px">':money(r.amount))+'</td></tr>').join("")+'</table></div><div id="saleScheduleStatus"></div>';renderSaleScheduleStatus()}
+function renderSaleScheduleStatus(){const el=$("saleScheduleStatus");if(!el)return;const expected=saleTotal()-Number($("saleAdvance").value),sum=saleSchedule.reduce((a,r)=>a+Number(r.amount||0),0);el.className=sum===expected?"notice":"notice bad";el.textContent="Grafik jami: "+money(sum)+" so‘m"+(sum===expected?" ✓":" · Qolgan qarzga teng emas!")}
+function confirmSaleInvoice(){if(!cashCanOperate(saleDateLocal(new Date())))return;const c=customers.find(x=>x.pinfl===saleCustomerPinfl&&!x.deleteMarked);if(!c){notify("Mijozni tanlang!",true);return}if(customerBlacklisted(c.pinfl)){alert("⚠️ QORA RO‘YXAT!\\nMijozning kamida bitta fakturasida 31 kundan oshgan qarz mavjud.\\nYangi sotuvni rasmiylashtirish uchun avval qarzdorlikni tekshiring.");return}if(!saleItems.some(x=>!x.deleteMarked)){notify("Fakturaga tovar qo‘shing!",true);return}const kind=$("saleKind").value,total=saleTotal(),advance=kind==="cash"?total:Number($("saleAdvance").value);if(!Number.isFinite(advance)||advance<0||advance>total){notify("Boshlang‘ich to‘lov noto‘g‘ri!",true);return}if(kind==="installment"){saleTermsChanged();const months=Number($("saleMonths").value);if(!Number.isInteger(months)||months<1||months>60||saleSchedule.length!==months||saleSchedule.some(x=>!x.date||!Number.isFinite(Number(x.amount))||Number(x.amount)<0)||saleSchedule.reduce((a,x)=>a+Number(x.amount),0)!==total-advance){notify("To‘lov grafigi yoki sanalar noto‘g‘ri!",true);return}}
+for(const item of saleItems.filter(x=>!x.deleteMarked)){const x=data.find(z=>z.barcode===item.barcode);if(!x||x.sold||x.deleteMarked||x.finalDeleted){notify("Tovar holati o‘zgargan: "+item.barcode,true);return}}
+const today=saleDateLocal(new Date());
+const dueToday=kind==="installment"?saleSchedule.filter(r=>r.date===today).reduce((a,r)=>a+Number(r.amount),0):0;
+let todayPayment=0;
+if(dueToday>0){
+ const entered=prompt("Birinchi to‘lov BUGUN ("+today+").\\nGrafik bo‘yicha: "+money(dueToday)+" so‘m.\\nHaqiqatan qabul qilingan to‘lov summasini kiriting:",String(dueToday));
+ if(entered===null)return;
+ const cleaned=entered.trim().replace(/\\s/g,"");
+ todayPayment=Number(cleaned);
+ if(!cleaned||!Number.isFinite(todayPayment)||!Number.isInteger(todayPayment)||todayPayment<=0||todayPayment>dueToday){notify("Bugungi to‘lov summasi 0 dan katta va belgilangan summadan oshmasligi kerak.",true);return}
+ if(!confirm("Bugungi to‘lov: "+money(todayPayment)+" so‘m.\\nQabul qilinganini tasdiqlaysizmi?"))return;
+}
+ensureSaleNumber();
+const chosenNumber=currentSaleNumber();
+if(!chosenNumber||chosenNumber.length>60){notify("Faktura raqamini kiriting.",true);return}
+if(saleInvoices.some(z=>String(z.number).toUpperCase()===chosenNumber.toUpperCase())){notify("Bu faktura raqami avval mavjud!",true);return}
+if(!confirm(chosenNumber+" fakturani tasdiqlaysizmi? Jami: "+money(total)+" so‘m"+(todayPayment?"\\nBugun qabul qilingan: "+money(todayPayment)+" so‘m":"")))return;
+const snapshot=JSON.stringify(data),invoice={number:chosenNumber,note:$("saleNote").value.trim(),createdAt:new Date().toISOString(),saleLocalDate:today,customerPinfl:c.pinfl,customerFio:c.fio,kind,total,advance,advanceMethod:$("saleAdvanceMethod").value,payMethod:$("salePayMethod").value,todayPayment,payments:todayPayment?[{date:today,amount:todayPayment,type:"first_schedule_payment",method:$("salePayMethod").value}]:[],items:saleItems.filter(x=>!x.deleteMarked).map(x=>({...x})),schedule:kind==="installment"?saleSchedule.map(x=>({...x})):[]};
+for(const item of saleItems.filter(x=>!x.deleteMarked)){const x=data.find(z=>z.barcode===item.barcode);x.sold=true;x.salePrice=item.price;x.soldAt=invoice.createdAt;x.saleInvoice=invoice.number}try{localStorage.setItem(KEY,JSON.stringify(data));localStorage.setItem(SALE_KEY,JSON.stringify([...saleInvoices,invoice]));saleInvoices.push(invoice)}catch(e){data=JSON.parse(snapshot);try{localStorage.setItem(KEY,snapshot)}catch(_){}notify("Saqlashda xatolik. Faktura tasdiqlanmadi!",true);return}
+saleItems=[];saleCustomerPinfl="";saleSchedule=[];saleScheduleSignature="";$("saleNumberInput").value=nextSaleNumber();$("saleNote").value="";$("saleSelectedCustomer").textContent="Mijoz tanlanmagan";$("saleAdvance").value="0";renderSaleItems();saleHistoryToday();renderAll();notify("Faktura tasdiqlandi: "+invoice.number)}
+function saleHistoryToday(){const t=saleDateLocal(new Date());$("saleHistoryFrom").value=t;$("saleHistoryTo").value=t;renderSaleInvoices()}
+function saleInvoiceDay(x){
+ // New invoices store the local transaction date. Older ones use the saved timestamp.
+ if(x.saleLocalDate)return x.saleLocalDate;
+ const d=new Date(x.createdAt);
+ return Number.isNaN(d.getTime())?String(x.createdAt||"").slice(0,10):saleDateLocal(d);
+}
+function saleReportTotals(arr){
+ const t={cash:0,installment:0,first:0,advance:0,cashCount:0,installmentCount:0};
+ for(const x of arr){
+  if(x.kind==="cash"){t.cash+=Number(x.total)||0;t.cashCount++}
+  else if(x.kind==="installment"){
+   t.installment+=Number(x.total)||0;t.installmentCount++;
+   t.advance+=Number(x.advance)||0;
+   const firstPayments=Array.isArray(x.payments)?x.payments.filter(p=>p.type==="first_schedule_payment"):[];
+   t.first+=firstPayments.length?firstPayments.reduce((n,p)=>n+(Number(p.amount)||0),0):(Number(x.todayPayment)||0);
+  }
+ }
+ return t;
+}
+function saleReportBox(arr,label,overall){
+ const t=saleReportTotals(arr),total=t.cash+t.installment;
+ return '<div style="margin:12px 0 18px;padding:14px;border:1px solid #cbd5e1;border-radius:12px;background:'+(overall?'#e8eefc':'#f8fafc')+'">'+
+ '<h3 style="margin:0 0 12px">'+esc(label)+'</h3>'+
+ '<div class="item">💵 Naqd sotuv: <b>'+money(t.cash)+' so‘m</b> <span class="muted">('+t.cashCount+' ta faktura)</span></div>'+
+ '<div class="item">📋 Nasiya sotuv: <b>'+money(t.installment)+' so‘m</b> <span class="muted">('+t.installmentCount+' ta faktura)</span></div>'+
+ '<div class="item">💳 Birinchi oylik to‘lov (qabul qilingan): <b>'+money(t.first)+' so‘m</b></div>'+
+ '<div class="item">💰 Boshlang‘ich to‘lov: <b>'+money(t.advance)+' so‘m</b></div>'+
+ '<div class="item"><b>Jami sotuv: '+money(total)+' so‘m</b></div>'+
+ '<div class="item"><b>Jami qabul qilingan: '+money(t.cash+t.advance+t.first)+' so‘m</b></div>'+
+ '</div>';
+}
+function renderSaleInvoices(){
+ const el=$("saleInvoiceList"),summary=$("saleReportSummary");if(!el)return;
+ ensureSaleNumber();$("saleNumber").textContent="Taklif etilgan raqam: "+nextSaleNumber();
+ const from=$("saleHistoryFrom").value||saleDateLocal(new Date());
+ const to=$("saleHistoryTo").value||saleDateLocal(new Date());
+ if(from>to){summary.innerHTML='';el.innerHTML='<p class="notice bad">Boshlanish sanasi tugash sanasidan keyin bo‘lishi mumkin emas.</p>';return}
+ const items=saleInvoices.filter(x=>{const d=saleInvoiceDay(x);return d>=from&&d<=to}).sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
+ const groups={};for(const x of items){const d=saleInvoiceDay(x);(groups[d]??=[]).push(x)}
+ const days=Object.entries(groups).sort((a,b)=>b[0].localeCompare(a[0]));
+ summary.innerHTML=saleReportBox(items,from===to?'📊 '+from+' — kunlik yakun':'📊 '+from+' — '+to+' interval bo‘yicha umumiy yakun',true);
+ el.innerHTML=days.map(([day,arr])=>'<div style="margin-top:20px"><h3 style="padding:10px 12px;background:#e8eefc;border-radius:10px">📅 '+esc(day)+' — '+arr.length+' ta faktura</h3>'+(from===to?'':saleReportBox(arr,'Kunlik hisobot — '+day,false))+arr.map(x=>'<div class="item"><b>'+esc(x.number)+' · '+esc(x.customerFio)+'</b><div class="muted">'+(x.kind==="cash"?"Naqd":"Bo‘lib to‘lash")+' · '+x.items.length+' dona</div><div><b>'+money(x.total)+' so‘m</b></div><button class="secondary" onclick="showSaleInvoice('+saleArg(x.number)+')">Ko‘rish</button> <button class="secondary" onclick="printSaleSchedule('+saleArg(x.number)+')">🖨 To‘lov grafigini chop etish</button></div>').join('')+'</div>').join('')||'<p class="muted">Tanlangan sana oralig‘ida sotuv fakturasi yo‘q.</p>';
+}
+
+function collectionToday(){const el=$("collectionUntil");if(el)el.value=saleDateLocal(new Date());renderCollection()}
+function collectionDueRows(x,until){
+ if(x.kind!=="installment"||!Array.isArray(x.schedule)||invoiceIsClosed(x))return [];
+ let paid=Math.max(0,invoiceReceived(x)-(Number(x.advance)||0));
+ return x.schedule.slice().sort((a,b)=>String(a.date).localeCompare(String(b.date))).flatMap((r,i)=>{
+  const amt=Math.max(0,Number(r.amount)||0),applied=Math.min(paid,amt);paid-=applied;
+  const left=amt-applied;
+  if(!left||!/^\d{4}-\d{2}-\d{2}$/.test(String(r.date))||r.date>until)return [];
+  const days=Math.max(0,Math.round((new Date(until+"T12:00:00")-new Date(r.date+"T12:00:00"))/86400000));
+  return [{date:r.date,amount:left,days,number:i+1}];
+ });
+}
+function renderCollection(){
+ const el=$("collectionList"),summary=$("collectionSummary");if(!el||!summary)return;
+ const until=$("collectionUntil").value||saleDateLocal(new Date());
+ renderCollectionReport();
+ const entries=saleInvoices.map(x=>({x,dues:collectionDueRows(x,until)})).filter(e=>e.dues.length);
+ const total=entries.reduce((n,e)=>n+e.dues.reduce((a,d)=>a+d.amount,0),0);
+ const clients=new Set(entries.map(e=>e.x.customerPinfl));
+ const old=entries.reduce((n,e)=>n+e.dues.filter(d=>d.days>30).reduce((a,d)=>a+d.amount,0),0);
+ summary.innerHTML='<b>Undiruv jami: '+money(total)+' so‘m</b><br>'+clients.size+' ta mijoz · '+entries.length+' ta faktura · 31+ kunlik qarz: '+money(old)+' so‘m';
+ const groups=new Map();for(const e of entries){const key=e.x.customerPinfl||e.x.customerFio;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(e)}
+ el.innerHTML=[...groups.values()].map(arr=>{
+  const name=arr[0].x.customerFio,subtotal=arr.reduce((n,e)=>n+e.dues.reduce((a,d)=>a+d.amount,0),0);
+  return '<div class="item"><h3>👤 '+esc(name)+'</h3><b>Undirilishi kerak: '+money(subtotal)+' so‘m</b>'+arr.map(({x,dues})=>'<div class="collection-invoice"><b>'+esc(x.number)+'</b> · '+esc(saleInvoiceDay(x))+'<div>'+dues.map(d=>'<div class="collection-due '+(d.days>30?'collection-late':'')+'">📅 '+esc(d.date)+' · '+money(d.amount)+' so‘m · '+(d.days===0?'Bugun':d.days+' kun kechikkan')+'</div>').join('')+'</div><button class="secondary" onclick="openCollectionInvoice('+saleArg(x.number)+')">Fakturani ochish</button></div>').join('')+'</div>';
+ }).join('')||'<p class="muted">Belgilangan sanagacha muddati kelgan qarzdorlik topilmadi.</p>';
+}
+function collectionLocations(){
+ const names=new Set();
+ for(const x of saleInvoices)for(const item of x.items||[])if(item.location)names.add(String(item.location));
+ return [...names].sort((a,b)=>a.localeCompare(b,"uz"));
+}
+function collectionReportData(){
+ const until=$("collectionUntil")?.value||saleDateLocal(new Date());
+ const sort=$("collectionSort")?.value||"due";
+ const rows=[];
+ for(const x of saleInvoices){
+  const client=customers.find(c=>String(c.pinfl)===String(x.customerPinfl));
+  const phone=client?.phone||"Ko‘rsatilmagan";
+  for(const d of collectionDueRows(x,until))rows.push({date:d.date,amount:d.amount,days:d.days,number:x.number,customer:x.customerFio,pinfl:x.customerPinfl,phone,note:x.note||""});
+ }
+ rows.sort((a,b)=>{
+  if(sort==="customer")return a.customer.localeCompare(b.customer,"uz")||a.date.localeCompare(b.date)||a.number.localeCompare(b.number,undefined,{numeric:true});
+  if(sort==="invoice")return a.number.localeCompare(b.number,undefined,{numeric:true})||a.date.localeCompare(b.date);
+  return a.date.localeCompare(b.date)||a.customer.localeCompare(b.customer,"uz")||a.number.localeCompare(b.number,undefined,{numeric:true});
+ });
+ return {rows,until,sort,total:rows.reduce((n,r)=>n+r.amount,0)};
+}
+function collectionReportTable(rows){
+ const phoneHTML=v=>esc(v).replace(/\s*[,;\n]+\s*/g,"<br>");
+ return '<div class="collection-report-scroll"><table class="collection-report-table"><colgroup><col style="width:4%"><col style="width:11%"><col style="width:19%"><col style="width:11%"><col style="width:21%"><col style="width:23%"><col style="width:11%"></colgroup><thead><tr><th>№</th><th>Muddat</th><th>Mijoz</th><th>Faktura</th><th>Telefon raqami</th><th>Faktura izohi</th><th>Qarz (so‘m)</th></tr></thead><tbody>'+rows.map((r,i)=>'<tr><td>'+(i+1)+'</td><td>'+esc(r.date)+'</td><td>'+esc(r.customer)+'</td><td>'+esc(r.number)+'</td><td class="report-phone">'+phoneHTML(r.phone)+'</td><td class="report-note">'+esc(r.note||"—")+'</td><td class="report-money">'+money(r.amount)+'</td></tr>').join('')+'</tbody><tfoot><tr><td colspan="6">JAMI</td><td>'+money(rows.reduce((n,r)=>n+r.amount,0))+'</td></tr></tfoot></table></div>';
+}
+function renderCollectionReport(){
+ const {rows,until,total}=collectionReportData();
+ const count=new Set(rows.map(r=>r.pinfl||r.customer)).size;
+ $("collectionReportSummary").innerHTML='<b>Hisobot: '+money(total)+' so‘m</b><br>'+count+' ta mijoz · '+new Set(rows.map(r=>r.number)).size+' ta faktura · '+rows.length+' ta to‘lov muddati<br><small>'+esc(until)+' sanagacha</small>';
+ $("collectionReportList").innerHTML=rows.length?collectionReportTable(rows):'<p class="muted">Tanlangan filtr bo‘yicha qarzdorlik yo‘q.</p>';
+}
+function printCollectionReport(){
+ const {rows,until,sort,total}=collectionReportData();
+ const labels={due:"To‘lov muddati",customer:"Mijoz",invoice:"Faktura raqami"};
+ const doc='<!doctype html><html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Undiruv hisoboti</title><style>body{font:10px Arial,sans-serif;margin:14px;color:#111}.zoom-toolbar{position:sticky;top:0;background:#fff;border-bottom:1px solid #ccc;padding:10px;z-index:2;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.zoom-toolbar button{margin:0;padding:9px 12px}.zoom-stage{overflow:auto;max-width:100%;touch-action:pan-x pan-y}.zoom-sheet{width:270mm;max-width:none;transform-origin:top left;zoom:1}.zoom-hint{font-size:12px;color:#555}h1{text-align:center;font-size:18px}p{line-height:1.7}table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:15px}th,td{border:1px solid #777;padding:6px 4px;text-align:left;overflow-wrap:break-word;word-break:normal;vertical-align:top}.report-phone{white-space:normal;overflow-wrap:anywhere;font-weight:600}.report-note{white-space:pre-wrap}.report-money{white-space:nowrap;font-size:9px}th{background:#eee}tfoot{font-weight:bold;background:#eee}.sign{margin-top:50px;display:flex;justify-content:space-between}button{padding:12px;margin-top:20px}@page{size:297mm 210mm;margin:10mm}@media print{html,body{width:100%;margin:0;padding:0}.zoom-toolbar{display:none}.zoom-stage{overflow:visible}.zoom-sheet{zoom:1!important;width:277mm!important;max-width:277mm!important}table{width:100%!important}thead{display:table-header-group}tr{break-inside:avoid}.collection-report-scroll{overflow:visible}}</style></head><body><div class="zoom-toolbar"><button onclick="setReportZoom(-0.25)">−</button><b id="zoomValue">100%</b><button onclick="setReportZoom(0.25)">+</button><button onclick="resetReportZoom()">100%</button><button onclick="window.print()">🖨 Chop etish / PDF</button><span class="zoom-hint">Ikki barmoq bilan kattalashtiring. PDF oynasida pastga o‘q (⌄) → Yo‘nalish → Albomniy (Landscape) tanlang.</span></div><div class="zoom-stage" id="zoomStage"><div class="zoom-sheet" id="zoomSheet"><h1>UNDIRUV HISOBOTI</h1><p><b>Qaysi sanagacha:</b> '+esc(until)+'<br><b>Saralash:</b> '+esc(labels[sort])+' (o‘sib borish)<br><b>Jami undiruv:</b> '+money(total)+' so‘m</p>'+collectionReportTable(rows)+'<div class="sign"><span>Mas’ul: ___________________</span><span>Sana: ___________________</span></div></div></div><script>let reportZoom=1;function applyReportZoom(){document.getElementById("zoomSheet").style.zoom=reportZoom;document.getElementById("zoomValue").textContent=Math.round(reportZoom*100)+"%"}function setReportZoom(step){reportZoom=Math.max(.5,Math.min(4,reportZoom+step));applyReportZoom()}function resetReportZoom(){reportZoom=1;applyReportZoom()}let pinchStart=0,pinchZoom=1;const stage=document.getElementById("zoomStage");function dist(t){return Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY)}stage.addEventListener("touchstart",e=>{if(e.touches.length===2){pinchStart=dist(e.touches);pinchZoom=reportZoom}},{passive:true});stage.addEventListener("touchmove",e=>{if(e.touches.length===2&&pinchStart){e.preventDefault();reportZoom=Math.max(.5,Math.min(4,pinchZoom*dist(e.touches)/pinchStart));applyReportZoom()}},{passive:false});stage.addEventListener("touchend",e=>{if(e.touches.length<2)pinchStart=0},{passive:true});window.addEventListener("beforeprint",()=>{document.getElementById("zoomSheet").style.zoom=1});window.addEventListener("afterprint",applyReportZoom);<\/script></body></html>';
+ const w=window.open("","_blank");if(!w){notify("Chop etish oynasi bloklandi. Yangi oynalarga ruxsat bering.",true);return}
+ w.document.open();w.document.write(doc);w.document.close();w.focus();
+}
+function openCollectionInvoice(num){page("facturas");invoiceStatusView="active";$("statusInvoiceSearch").value=num;renderInvoiceStatusList()}
+let invoiceStatusView="active";
+function invoiceReceived(x){
+ if(x.kind==="cash")return Number(x.total)||0;
+ const p=Array.isArray(x.payments)?x.payments.filter(z=>!z.deleteMarked):[];
+ const first=p.filter(z=>z.type==="first_schedule_payment").reduce((n,z)=>n+(Number(z.amount)||0),0);
+ return (Number(x.advance)||0)+(first||(Array.isArray(x.payments)&&x.payments.some(z=>z.type==="first_schedule_payment")?0:Number(x.todayPayment)||0))+p.filter(z=>z.type!=="first_schedule_payment").reduce((n,z)=>n+(Number(z.amount)||0),0);
+}
+function receiveInvoicePayment(num,fromCash=false){if(!cashCanOperate(saleDateLocal(new Date())))return;
+ const x=saleInvoices.find(z=>z.number===num);
+ if(!x||x.kind!=="installment"){notify("Bu faktura uchun nasiya to‘lovi mavjud emas.",true);return}
+ const remaining=Math.max(0,(Number(x.total)||0)-invoiceReceived(x));
+ if(remaining<=0){notify("Faktura to‘liq to‘langan.",true);return}
+ const raw=prompt(x.number+" — "+x.customerFio+"\\nQolgan qarz: "+money(remaining)+" so‘m\\nQabul qilingan to‘lov summasini kiriting:","");
+ if(raw===null)return;
+ const val=raw.trim().replace(/\\s/g,"");
+ const amount=Number(val);
+ if(!val||!Number.isSafeInteger(amount)||amount<=0||amount>remaining){notify("To‘lov 0 dan katta va qolgan qarzdan oshmasligi kerak.",true);return}
+ const method=fromCash?$("cashMethod").value:prompt("To‘lov usuli: naqd / karta / xolis / terminal", "naqd");if(method===null)return;const m=method.trim().toLowerCase();if(!CASH_METHODS.includes(m)){notify("To‘lov turi noto‘g‘ri!",true);return}
+ const date=saleDateLocal(new Date());
+ if(!confirm("To‘lovni tasdiqlaysizmi?\\nFaktura: "+x.number+"\\nMijoz: "+x.customerFio+"\\nSana: "+date+"\\nQabul qilindi: "+money(amount)+" so‘m\\nQoladi: "+money(remaining-amount)+" so‘m"))return;
+ const updated=saleInvoices.map(z=>z.number===num?{...z,payments:[...(Array.isArray(z.payments)?z.payments:[]),{date,amount,type:"installment_payment",method:m,createdAt:new Date().toISOString()}]}:z);
+ try{localStorage.setItem(SALE_KEY,JSON.stringify(updated))}
+ catch(e){notify("To‘lovni saqlab bo‘lmadi. Xotira holatini tekshiring.",true);return}
+ saleInvoices=updated;
+ renderInvoiceStatusList();renderSaleInvoices();renderSaleCustomers();
+ if(fromCash){cashView="register";renderCash()}
+ notify("To‘lov qabul qilindi: "+money(amount)+" so‘m. "+(remaining===amount?"Faktura yopildi.":"Qolgan qarz: "+money(remaining-amount)+" so‘m"));
+}
+const expandedInvoicePayments=new Set();
+function toggleInvoicePayments(num){
+ if(expandedInvoicePayments.has(num))expandedInvoicePayments.delete(num);
+ else expandedInvoicePayments.add(num);
+ renderInvoiceStatusList();
+}
+function paymentToggleHTML(x){
+ if(x.kind!=="installment")return "";
+ const opened=expandedInvoicePayments.has(x.number);
+ const count=Array.isArray(x.payments)?x.payments.length:0;
+ return '<button class="secondary" onclick="toggleInvoicePayments('+saleArg(x.number)+')">'+(opened?'▲ Yopish':'💵 Bajarilgan to‘lovlar ('+count+')')+'</button>';
+}
+function paymentId(p,i){return p.id||"legacy-"+i}
+function paymentRowsHTML(x){
+ if(x.kind!=="installment")return "";
+ const ps=Array.isArray(x.payments)?x.payments:[];
+ const entries=ps.map((p,i)=>({p,i})).filter(z=>!z.p.finalDeleted);
+ if(!entries.length)return '<div class="muted" style="margin-top:9px">To‘lovlar ro‘yxati hozircha bo‘sh.</div>';
+ return '<div class="payment-list"><b>💵 To‘lovlar ro‘yxati</b>'+entries.map(({p,i})=>
+ '<div class="payment-row'+(p.deleteMarked?' payment-marked':'')+'"><div><b>'+esc(p.date||saleInvoiceDay(x))+'</b> · '+money(p.amount)+' so‘m<br><span class="muted">'+(p.type==="first_schedule_payment"?"Birinchi oylik to‘lovi":"Oylik to‘lov")+(p.deleteMarked?' · O‘CHIRISHGA BELGILANGAN':'')+'</span></div><div class="payment-actions">'+(p.deleteMarked?
+ '<button class="secondary" onclick="restoreInvoicePayment('+saleArg(x.number)+','+i+')">↩ Qayta tiklash</button><button class="danger" onclick="finalDeleteInvoicePayment('+saleArg(x.number)+','+i+')">Butunlay o‘chirish</button>':
+ '<button class="secondary" onclick="editInvoicePayment('+saleArg(x.number)+','+i+')">✎ Tahrirlash</button><button class="danger" onclick="markInvoicePayment('+saleArg(x.number)+','+i+')">🗑 O‘chirish</button>')+'</div></div>').join('')+'</div>';
+}
+function saveInvoicePaymentChange(num,fn){
+ const updated=saleInvoices.map(x=>x.number===num?{...x,payments:fn(Array.isArray(x.payments)?x.payments:[])}:x);
+ try{localStorage.setItem(SALE_KEY,JSON.stringify(updated))}
+ catch(e){notify("O‘zgarishlarni saqlab bo‘lmadi.",true);return false}
+ saleInvoices=updated;
+ renderInvoiceStatusList();renderSaleInvoices();renderSaleCustomers();renderDeleted();
+ return true;
+}
+function editInvoicePayment(num,i){
+ const x=saleInvoices.find(z=>z.number===num),p=x?.payments?.[i];
+ if(!p||p.deleteMarked||p.finalDeleted)return;
+ const raw=prompt("To‘lov summasini tahrirlash (so‘m):",String(p.amount));if(raw===null)return;
+ const val=raw.trim().replace(/\s/g,""),amount=Number(val);
+ const max=(Number(x.total)||0)-invoiceReceived(x)+(Number(p.amount)||0);
+ if(!val||!Number.isSafeInteger(amount)||amount<=0||amount>max){notify("Noto‘g‘ri summa yoki faktura summasidan oshib ketdi.",true);return}
+ const date=prompt("To‘lov sanasi (YYYY-MM-DD):",p.date||saleInvoiceDay(x));if(date===null)return;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||Number.isNaN(new Date(date+"T12:00:00").getTime())||new Date(date+"T12:00:00").toISOString().slice(0,10)!==date){notify("Sanani YYYY-MM-DD shaklida kiriting.",true);return}
+ if(!confirm("To‘lovni tahrirlashni tasdiqlaysizmi?\nEski: "+money(p.amount)+" so‘m\nYangi: "+money(amount)+" so‘m\nSana: "+date))return;
+ if(saveInvoicePaymentChange(num,ps=>ps.map((z,j)=>j===i?{...z,amount,date,editedAt:new Date().toISOString()}:z)))notify("To‘lov tahrirlandi.");
+}
+function markInvoicePayment(num,i){
+ const x=saleInvoices.find(z=>z.number===num),p=x?.payments?.[i];if(!p||p.deleteMarked)return;
+ if(!confirm("Rostdan ham o‘chirmoqchimisiz?"))return;
+ if(saveInvoicePaymentChange(num,ps=>ps.map((z,j)=>j===i?{...z,deleteMarked:true}:z)))notify("To‘lov o‘chirishga belgilandi. Qayta tiklash mumkin.");
+}
+function restoreInvoicePayment(num,i){
+ const x=saleInvoices.find(z=>z.number===num),p=x?.payments?.[i];if(!p||!p.deleteMarked)return;
+ if(!confirm("Haqiqatan qayta tiklamoqchimisiz?"))return;
+ const max=(Number(x.total)||0)-invoiceReceived(x);
+ if(Number(p.amount)>max){notify("Tiklanganda jami to‘lov faktura summasidan oshadi.",true);return}
+ if(saveInvoicePaymentChange(num,ps=>ps.map((z,j)=>j===i?{...z,deleteMarked:false}:z)))notify("To‘lov qayta tiklandi.");
+}
+function finalDeleteInvoicePayment(num,i){
+ const x=saleInvoices.find(z=>z.number===num),p=x?.payments?.[i];if(!p||!p.deleteMarked)return;
+ if(!confirm("Rostdan ham BUTUNLAY o‘chirmoqchimisiz?"))return;
+ if(p.type==="first_schedule_payment"){const z=saleInvoices.find(z=>z.number===num);if(z)z.todayPayment=0;}
+ if(saveInvoicePaymentChange(num,ps=>ps.filter((_,j)=>j!==i)))notify("To‘lov butunlay o‘chirildi.");
+}
+function debtBuckets(x,at=saleDateLocal(new Date())){
+ const buckets={green:0,red:0,black:0};
+ if(x.kind!=="installment"||!Array.isArray(x.schedule))return buckets;
+ // Oldest scheduled debt is settled first; advance is outside the schedule.
+ let paid=Math.max(0,invoiceReceived(x)-(Number(x.advance)||0));
+ const schedule=x.schedule.slice().sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+ const today=new Date(at+"T12:00:00");
+ for(const r of schedule){
+  const amount=Math.max(0,Number(r.amount)||0);
+  const applied=Math.min(paid,amount);paid-=applied;
+  const unpaid=amount-applied;if(!unpaid)continue;
+  const due=new Date(String(r.date)+"T12:00:00");
+  if(Number.isNaN(due.getTime())){buckets.green+=unpaid;continue}
+  const late=Math.round((today-due)/86400000);
+  if(late>30)buckets.black+=unpaid;
+  else if(late>=0)buckets.red+=unpaid;
+  else buckets.green+=unpaid;
+ }
+ return buckets;
+}
+function customerBlacklisted(p){
+ return saleInvoices.some(x=>String(x.customerPinfl)===String(p)&&!invoiceIsClosed(x)&&debtBuckets(x).black>0);
+}
+function invoiceDebtHTML(x){
+ const d=debtBuckets(x);
+ return '<div class="debtgrid"><div class="debtbox debtgreen">🟢 Muddati kelmagan<strong>'+money(d.green)+' so‘m</strong></div><div class="debtbox debtred">🔴 0–30 kun qarz<strong>'+money(d.red)+' so‘m</strong></div><div class="debtbox debtblack">⚫ 31+ kun qarz<strong>'+money(d.black)+' so‘m</strong></div></div>'+(customerBlacklisted(x.customerPinfl)?'<div class="blacklist">⚠️ QORA RO‘YXAT! Ushbu mijozning kamida bitta fakturasida 31 kundan oshgan qarz bor.</div>':'');
+}
+function invoiceIsClosed(x){return invoiceReceived(x)>=(Number(x.total)||0)}
+function setInvoiceStatusView(v){invoiceStatusView=v;renderInvoiceStatusList()}
+function renderInvoiceStatusList(){
+ const el=$("statusInvoiceList");if(!el)return;
+ $("activeInvoiceBtn").className=invoiceStatusView==="active"?"":"secondary";
+ $("closedInvoiceBtn").className=invoiceStatusView==="closed"?"":"secondary";
+ const query=($('statusInvoiceSearch')?.value||'').trim().toLocaleUpperCase();
+ const filtered=saleInvoices.filter(x=>invoiceIsClosed(x)===(invoiceStatusView==="closed")&&(!query||[x.number,x.customerFio,x.customerPinfl,x.customerPassport].some(v=>String(v||'').toLocaleUpperCase().includes(query))));
+ const total=filtered.reduce((n,x)=>n+(Number(x.total)||0),0);
+ $("statusInvoiceSummary").textContent=(invoiceStatusView==="active"?"Aktiv":"Yopilgan")+" fakturalar"+(query?" (qidiruv natijasi)":"")+": "+filtered.length+" ta · Jami "+money(total)+" so‘m";
+ el.innerHTML=filtered.slice().sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt))).map(x=>'<div class="item"><b>'+esc(x.number)+' · '+esc(x.customerFio)+'</b><div class="muted">'+esc(saleInvoiceDay(x))+' · '+(x.kind==="cash"?"Naqd":"Bo‘lib to‘lash")+'</div><div>Jami: <b>'+money(x.total)+' so‘m</b></div><div>Qabul qilingan: '+money(invoiceReceived(x))+' so‘m</div><div>Qolgan: <b>'+money(Math.max(0,(Number(x.total)||0)-invoiceReceived(x)))+' so‘m</b></div>'+invoiceDebtHTML(x)+'<div class="invoice-actions"><button class="secondary" onclick="showSaleInvoice('+saleArg(x.number)+')">Ko‘rish</button> '+(x.kind==="installment"?'<button class="secondary" onclick="printSaleSchedule('+saleArg(x.number)+')">🖨 To‘lov grafigi</button>':'')+'<button class="secondary" onclick="printInvoiceSverka('+saleArg(x.number)+')">📄 Sverka</button>'+(x.kind==="installment"&&!invoiceIsClosed(x)?'<button onclick="receiveInvoicePayment('+saleArg(x.number)+')">💳 To‘lov qilish</button>':'')+paymentToggleHTML(x)+'</div>'+(expandedInvoicePayments.has(x.number)?paymentRowsHTML(x):'')+'</div>').join('')||'<p class="muted">'+(query?'Qidiruv bo‘yicha faktura topilmadi.':'Bu bo‘limda faktura yo‘q.')+'</p>';
+}
+function invoicePaymentLedger(x){
+ const events=[{date:saleInvoiceDay(x),label:"Schyot-faktura bo‘yicha sotuv",debit:Number(x.total)||0,credit:0,order:0}];
+ if(x.kind==="cash"){
+  events.push({date:saleInvoiceDay(x),label:"Naqd sotuv to‘lovi",debit:0,credit:Number(x.total)||0,order:1});
+ }else{
+  if(Number(x.advance)>0)events.push({date:saleInvoiceDay(x),label:"Boshlang‘ich to‘lov",debit:0,credit:Number(x.advance),order:1});
+  const payments=Array.isArray(x.payments)?x.payments.filter(p=>!p.deleteMarked):[];
+  const first=payments.filter(z=>z.type==="first_schedule_payment");
+  if(first.length===0&&Number(x.todayPayment)>0)events.push({date:saleInvoiceDay(x),label:"Birinchi oylik to‘lovi",debit:0,credit:Number(x.todayPayment),order:2});
+  payments.forEach((p,i)=>events.push({date:p.date||saleInvoiceDay(x),label:p.type==="first_schedule_payment"?"Birinchi oylik to‘lovi":"Oylik to‘lov",debit:0,credit:Number(p.amount)||0,order:3+i}));
+ }
+ return events.sort((a,b)=>String(a.date).localeCompare(String(b.date))||a.order-b.order);
+}
+function printInvoiceSverka(num){
+ const x=saleInvoices.find(z=>z.number===num);if(!x)return;
+ const events=invoicePaymentLedger(x);let running=0;
+ const trs=events.map((e,i)=>{running+=e.debit-e.credit;return '<tr><td>'+(i+1)+'</td><td>'+esc(e.date)+'</td><td>'+esc(e.label)+'</td><td>'+money(e.debit)+'</td><td>'+money(e.credit)+'</td><td>'+money(Math.max(0,running))+'</td></tr>'}).join('');
+ const received=invoiceReceived(x),left=Math.max(0,(Number(x.total)||0)-received);
+ const footer='<tr class="summary"><td colspan="3">JAMI / ИТОГО</td><td>'+money(x.total)+'</td><td>'+money(received)+'</td><td>'+money(left)+'</td></tr>';
+ const doc='<!doctype html><html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sverka '+esc(x.number)+'</title><style>body{font:13px Arial,sans-serif;color:#111;padding:22px;max-width:900px;margin:auto}h1{text-align:center;font-size:21px}p{line-height:1.7}table{border-collapse:collapse;width:100%;margin:18px 0}th,td{border:1px solid #555;padding:8px 5px;text-align:left}th{background:#eee}.summary td{font-weight:bold;background:#eaf0fc;border:1.5px solid #333}.total{font-size:15px;font-weight:bold}.sign{display:flex;justify-content:space-between;gap:20px;margin-top:60px}@media print{body{padding:0}button{display:none}}@page{size:A4;margin:15mm}</style></head><body><h1>FAKTURA BO‘YICHA SOLISHTIRMA DALOLATNOMA (SVERKA)</h1><p><b>Faktura №:</b> '+esc(x.number)+'<br><b>Sotuv sanasi:</b> '+esc(saleInvoiceDay(x))+'<br><b>Mijoz:</b> '+esc(x.customerFio)+'<br><b>JSHSHIR:</b> '+esc(x.customerPinfl)+'<br><b>Sotuv turi:</b> '+(x.kind==="cash"?"Naqd":"Bo‘lib to‘lash")+'</p><table><thead><tr><th>№</th><th>Sana</th><th>Operatsiya</th><th>Hisoblangan</th><th>To‘langan</th><th>Qoldiq</th></tr></thead><tbody>'+trs+footer+'</tbody></table><p class="total">Faktura summasi: '+money(x.total)+' so‘m<br>Jami to‘langan: '+money(received)+' so‘m<br>Qolgan qarz: '+money(left)+' so‘m</p><div class="sign"><span>Mijoz: ____________________</span><span>Sotuvchi: ____________________</span></div><p style="font-size:11px;margin-top:25px">Hisobot dasturda qayd etilgan operatsiyalar asosida shakllantirildi.</p><button onclick="window.print()">🖨 Chop etish / PDF</button></body></html>';
+ const w=window.open("","_blank");if(!w){notify("Sverka oynasi ochilmadi. Brauzerda yangi oynalarga ruxsat bering.",true);return}
+ w.document.open();w.document.write(doc);w.document.close();w.focus();
+}
+function showSaleInvoice(num){const x=saleInvoices.find(z=>z.number===num);if(!x)return;alert(x.number+"\nMijoz: "+x.customerFio+"\nJami: "+money(x.total)+" so‘m\nBoshlang‘ich: "+money(x.advance)+" so‘m\n\nTovarlar:\n"+x.items.map(z=>z.name+" ("+z.barcode+"): "+money(z.price)).join("\n")+(x.schedule.length?"\n\nTo‘lov grafigi:\n"+x.schedule.map(z=>z.date+" — "+money(z.amount)).join("\n"):""))}
+function printSaleSchedule(num){
+ const x=saleInvoices.find(z=>z.number===num);if(!x)return;
+ if(x.kind!=="installment"){notify("Naqd savdo uchun oylik to‘lov grafigi mavjud emas.",true);return}
+ const doc='<!doctype html><html lang="uz"><head><meta charset="utf-8"><title>To‘lov grafigi '+esc(x.number)+'</title><style>body{font:14px Arial,sans-serif;color:#111;padding:25px;max-width:850px;margin:auto}h1{text-align:center;font-size:22px}p{line-height:1.6}table{border-collapse:collapse;width:100%;margin-top:18px}th,td{border:1px solid #555;padding:10px;text-align:left}th{background:#eee}.sign{margin-top:55px;display:flex;justify-content:space-between}@media print{body{padding:0}button{display:none}}.debtgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:10px 0}.debtbox{padding:9px 5px;border-radius:10px;text-align:center;font-size:11px;font-weight:700;min-width:0}.debtbox strong{display:block;font-size:13px;overflow-wrap:anywhere;margin-top:5px}.debtgreen{background:#dcfce7;color:#14532d}.debtred{background:#fee2e2;color:#991b1b}.debtblack{background:#171717;color:#fff}.blacklist{background:#111;color:#ff4b4b;padding:12px;border-radius:10px;font-weight:800;margin:8px 0}</style></head><body><h1>TO‘LOV GRAFIGI</h1><p><b>Schyot-faktura:</b> '+esc(x.number)+'<br><b>Mijoz:</b> '+esc(x.customerFio)+'<br><b>JSHSHIR:</b> '+esc(x.customerPinfl)+'<br><b>Sotuv summasi:</b> '+money(x.total)+' so‘m<br><b>Boshlang‘ich to‘lov:</b> '+money(x.advance)+' so‘m<br><b>Grafik bo‘yicha jami:</b> '+money(x.total-x.advance)+' so‘m<br><b>Birinchi oylik to‘lovi:</b> '+money(x.todayPayment||0)+' so‘m</p><table><thead><tr><th>№</th><th>To‘lov sanasi</th><th>To‘lov summasi (so‘m)</th></tr></thead><tbody>'+x.schedule.map((r,i)=>'<tr><td>'+(i+1)+'</td><td>'+esc(r.date)+'</td><td>'+money(r.amount)+'</td></tr>').join('')+'</tbody></table><div class="sign"><span>Mijoz: ___________________</span><span>Sotuvchi: ___________________</span></div><p style="font-size:11px;margin-top:25px">Ushbu jadval kelishilgan to‘lov muddatlarini aks ettiradi.</p><button onclick="window.print()">🖨 Chop etish / PDF</button></body></html>';
+ const w=window.open("","_blank");if(!w){notify("Chop etish oynasi bloklandi. Brauzerda yangi oynalarga ruxsat bering.",true);return}
+ w.document.open();w.document.write(doc);w.document.close();w.focus();
+}
 function renderHistory(){$("historyList").innerHTML=data.slice().sort(sortBarcode).map(x=>'<div class="item '+(x.deleteMarked?"marked":"")+'"><b>'+esc(x.name)+'</b> · '+esc(x.barcode)+'<div class="muted">'+(x.finalDeleted?"Arxiv":x.deleteMarked?"Belgilangan":x.sold?"Sotilgan":"Omborda")+' · '+esc(x.invoice)+'</div>'+(x.finalDeleted?"":'<div class="actions"><button class="secondary" onclick="editSaved('+JSON.stringify(x.barcode).replace(/"/g,"&quot;")+')">✎ Tahrirlash</button><button class="danger" onclick="markSaved('+JSON.stringify(x.barcode).replace(/"/g,"&quot;")+')">'+(x.deleteMarked?"↩ Qaytarish":"🗑 Belgilash")+'</button></div>')+'</div>').join("")||"<p>Tarix bo‘sh</p>"}
-function editSaved(code){const x=data.find(z=>z.barcode===code);if(!x||x.deleteMarked||x.finalDeleted){notify("Tahrirlash mumkin emas",true);return}const n=prompt("Tovar nomi",x.name);if(n===null)return;if(!n.trim()){notify("Nom bo‘sh",true);return}const p=prompt("Xarid narxi",x.cost);if(p===null)return;if(p.trim()===""||!Number.isFinite(Number(p))||Number(p)<0){notify("Narx noto‘g‘ri",true);return}x.name=n.trim();x.cost=Number(p);persist()}
-function markSaved(code){const x=data.find(z=>z.barcode===code);if(!x||x.finalDeleted)return;x.deleteMarked=!x.deleteMarked;persist()}
-function renderDeleted(){const a=[...draft.filter(x=>x.deleteMarked).map(x=>({...x,src:"draft"})),...data.filter(x=>x.deleteMarked&&!x.finalDeleted).map(x=>({...x,src:"data"}))].sort(sortBarcode);$("deletedList").innerHTML=a.map(x=>'<div class="item marked"><b>'+esc(x.name)+'</b> · '+esc(x.barcode)+'<div class="muted">'+esc(x.invoice)+'</div><div class="actions"><button class="secondary" onclick="restore('+JSON.stringify(x.barcode).replace(/"/g,"&quot;")+','+JSON.stringify(x.src).replace(/"/g,"&quot;")+')">↩ Qaytarish</button><button class="danger" onclick="finalRemove('+JSON.stringify(x.barcode).replace(/"/g,"&quot;")+','+JSON.stringify(x.src).replace(/"/g,"&quot;")+')">Yakuniy o‘chirish</button></div></div>').join("")||"<p>Belgilangan operatsiyalar yo‘q</p>"}
-function restore(code,src){const x=(src==="draft"?draft:data).find(z=>z.barcode===code);if(x){x.deleteMarked=false;persist()}}
-function finalRemove(code,src){if(!confirm("Yakuniy o‘chirish? Barkod qayta ishlatilmaydi."))return;const arr=src==="draft"?draft:data;const i=arr.findIndex(z=>z.barcode===code);if(i<0)return;if(src==="draft"){const x=draft.splice(i,1)[0];data.push({...x,finalDeleted:true,deleteMarked:false,neverCommitted:true})}else{arr[i].finalDeleted=true;arr[i].deleteMarked=false}persist()}
+function editSaved(code){if(!requirePermission("edit"))return;const i=data.findIndex(z=>z.barcode===code);if(i<0||data[i].deleteMarked||data[i].finalDeleted){notify("Tahrirlash mumkin emas",true);return}openEdit("data",i)}
+function markSaved(code){if(!requirePermission("delete"))return;const x=data.find(z=>z.barcode===code);if(!x||x.finalDeleted)return;if(!confirm(x.deleteMarked?"Haqiqatan ham ushbu tovarni qayta tiklamoqchimisiz?":"Rostdan ham ushbu tovarni o‘chirishga belgilamoqchimisiz?"))return;x.deleteMarked=!x.deleteMarked;persist()}
+function renderDeleted(){const a=[...draft.filter(x=>x.deleteMarked).map(x=>({...x,src:"draft"})),...data.filter(x=>x.deleteMarked&&!x.finalDeleted).map(x=>({...x,src:"data"}))].sort(sortBarcode);const wh=markedWarehouses.filter(name=>warehouses.includes(name));
+ const arg=name=>JSON.stringify(name).replace(/"/g,"&quot;");
+ const customerHtml=customers.filter(x=>x.deleteMarked).map(x=>'<div class="item marked"><b>👤 Mijoz: '+esc(x.fio)+'</b><div class="muted">JSHSHIR: '+esc(x.pinfl)+' · Pasport: '+esc(x.passport)+'</div><div class="actions"><button class="secondary" onclick="restoreCustomer('+arg(x.pinfl)+')">↩ Qayta tiklash</button><button class="danger" onclick="finalDeleteCustomer('+arg(x.pinfl)+')">Butunlay o‘chirish</button></div></div>').join("");
+ const paymentHtml=saleInvoices.flatMap(x=>(Array.isArray(x.payments)?x.payments:[]).map((p,i)=>({x,p,i})).filter(z=>z.p.deleteMarked)).map(({x,p,i})=>'<div class="item marked"><b>💳 To‘lov: '+esc(x.number)+'</b><div>'+esc(x.customerFio)+' · '+esc(p.date)+' · '+money(p.amount)+' so‘m</div><div class="actions"><button class="secondary" onclick="restoreInvoicePayment('+saleArg(x.number)+','+i+')">↩ Qayta tiklash</button><button class="danger" onclick="finalDeleteInvoicePayment('+saleArg(x.number)+','+i+')">Butunlay o‘chirish</button></div></div>').join('');
+ const saleDraftHtml=saleItems.filter(x=>x.deleteMarked).map(x=>'<div class="item marked"><b>🛒 Sotuv fakturasi (tasdiqlanmagan): '+esc(x.name)+'</b><div>'+esc(x.barcode)+' · '+money(x.price)+' so‘m</div><div class="actions"><button class="secondary" onclick="restoreSaleItem('+saleArg(x.barcode)+')">↩ Qayta tiklash</button><button class="danger" onclick="finalRemoveSaleItem('+saleArg(x.barcode)+')">Butunlay o‘chirish</button></div></div>').join('');
+ const whHtml=wh.map(name=>'<div class="item marked"><b>🏬 Ombor: '+esc(name)+'</b><div class="muted">Sozlamalar → Omborlarni boshqarish</div><div class="actions"><button class="secondary" onclick="restoreWarehouse('+arg(name)+')">↩ Qayta tiklash</button><button class="danger" onclick="finalDeleteWarehouse('+arg(name)+')">Butunlay o‘chirish</button></div></div>').join("");
+ $("deletedList").innerHTML=a.map(x=>'<div class="item marked"><b>'+esc(x.name)+'</b> · '+esc(x.barcode)+'<div class="muted">'+esc(x.invoice)+'</div><div class="actions"><button class="secondary" onclick="restore('+JSON.stringify(x.barcode).replace(/"/g,"&quot;")+','+JSON.stringify(x.src).replace(/"/g,"&quot;")+')">↩ Qaytarish</button><button class="danger" onclick="finalRemove('+JSON.stringify(x.barcode).replace(/"/g,"&quot;")+','+JSON.stringify(x.src).replace(/"/g,"&quot;")+')">Yakuniy o‘chirish</button></div></div>').join("")+whHtml+customerHtml+paymentHtml+saleDraftHtml||"<p>Belgilangan operatsiyalar yo‘q</p>"}
+function restore(code,src){if(!requirePermission("delete"))return;const x=(src==="draft"?draft:data).find(z=>z.barcode===code);if(x&&x.deleteMarked&&confirm("Haqiqatan ham ushbu tovarni qayta tiklamoqchimisiz?")){x.deleteMarked=false;persist()}}
+function finalRemove(code,src){if(!requirePermission("delete"))return;if(!confirm("Rostdan ham ushbu tovarni BUTUNLAY o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi. Barkod qayta ishlatilmaydi."))return;const arr=src==="draft"?draft:data;const i=arr.findIndex(z=>z.barcode===code);if(i<0)return;if(src==="draft"){const x=draft.splice(i,1)[0];data.push({...x,finalDeleted:true,deleteMarked:false,neverCommitted:true})}else{arr[i].finalDeleted=true;arr[i].deleteMarked=false}persist()}
 
 function invoiceGroups(){
  const map=new Map();
  for(const x of data){if(x.neverCommitted)continue;const k=x.invoice||"Noma’lum";if(!map.has(k))map.set(k,[]);map.get(k).push(x)}
  return [...map.entries()].sort((a,b)=>a[0].localeCompare(b[0],undefined,{numeric:true}));
 }
+function resetInvoiceDates(){
+ const today=saleDateLocal(new Date());
+ $("invoicesFrom").value=today;$("invoicesTo").value=today;
+ renderInvoices();
+}
 function renderInvoices(){
+ if(!$("invoicesFrom").value&&!$("invoicesTo").value){const today=saleDateLocal(new Date());$("invoicesFrom").value=today;$("invoicesTo").value=today}
  const groups=invoiceGroups();
- $("invoiceList").innerHTML=groups.map(([num,items])=>{
- const active=items.filter(x=>!x.deleteMarked&&!x.finalDeleted);
- return '<div class="item"><b>'+esc(num)+'</b><div class="muted">'+esc(items[0].date||'')+' · '+esc(items[0].supplier||'')+'</div><div>'+active.length+' dona · '+money(active.reduce((s,x)=>s+Number(x.cost),0))+' so‘m</div><button class="secondary full" onclick="openInvoice('+JSON.stringify(num).replace(/"/g,'&quot;')+')">Ochish / tahrirlash →</button></div>';
- }).join('')||'<p class="muted">Hali tasdiqlangan fakturalar yo‘q</p>';
+ const from=$("invoicesFrom").value||saleDateLocal(new Date());
+ const to=$("invoicesTo").value||saleDateLocal(new Date());
+ const selected=groups.filter(([num,items])=>{
+  const date=String(items[0].date||"").slice(0,10);
+  return date>=from&&date<=to;
+ });
+ const days=new Map();
+ for(const group of selected){const date=String(group[1][0].date||"").slice(0,10);if(!days.has(date))days.set(date,[]);days.get(date).push(group)}
+ const formatDate=d=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d);return m?m[3]+"."+m[2]+"."+m[1]:d};
+ $("invoiceList").innerHTML=[...days.entries()].sort((a,b)=>b[0].localeCompare(a[0])).map(([date,dayGroups])=>{
+  const entries=dayGroups.map(([num,items])=>{
+   const active=items.filter(x=>!x.deleteMarked&&!x.finalDeleted);
+   return '<div class="item"><b>'+esc(num)+'</b><div class="muted">'+esc(items[0].date||'')+' · '+esc(items[0].supplier||'')+'</div><div>'+active.length+' dona · '+money(active.reduce((s,x)=>s+Number(x.cost),0))+' so‘m</div><button class="secondary full" onclick="openInvoice('+JSON.stringify(num).replace(/"/g,'&quot;')+')">Ochish / tahrirlash →</button></div>';
+  }).join('');
+  return '<h3 class="invoice-day-heading">📅 '+esc(formatDate(date))+' — '+dayGroups.length+' ta faktura</h3>'+entries;
+ }).join('')||'<p class="muted">Tanlangan sana oralig‘ida kirim fakturalari topilmadi.</p>';
  if(selectedInvoice!==null)renderInvoiceDetail();
 }
 function openInvoice(num){selectedInvoice=num;page('invoiceDetail')}
@@ -98,44 +606,348 @@ function renderInvoiceDetail(){
  const a=items.filter(x=>!x.deleteMarked&&!x.finalDeleted),first=items[0];
  $("invoiceDetailBody").innerHTML='<h2>'+esc(selectedInvoice)+'</h2><p class="muted">Sana: '+esc(first.date)+'<br>Yetkazib beruvchi: '+esc(first.supplier||'')+'<br>Ombor: '+esc(first.location)+'</p><button class="secondary full" onclick="editInvoiceMeta()">✎ Faktura ma’lumotlarini tahrirlash</button><p><b>Faol: '+a.length+' dona · '+money(a.reduce((s,x)=>s+Number(x.cost),0))+' so‘m</b></p>'+items.map((x,i)=>'<div class="item '+(x.deleteMarked?'marked':'')+'"><b>'+(i+1)+'. '+esc(x.name)+'</b><div class="muted">Barkod: '+esc(x.barcode)+' · 1 dona · '+money(x.cost)+' so‘m</div><div class="muted">'+(x.finalDeleted?'Arxiv':x.deleteMarked?'O‘chirishga belgilangan':x.sold?'Sotilgan':'Omborda')+'</div>'+(x.finalDeleted?'':'<div class="actions"><button class="secondary" onclick="editSaved('+JSON.stringify(x.barcode).replace(/"/g,'&quot;')+')">✎ Tahrirlash</button><button class="danger" onclick="markSaved('+JSON.stringify(x.barcode).replace(/"/g,'&quot;')+')">'+(x.deleteMarked?'↩ Qaytarish':'🗑 Belgilash')+'</button></div>')+'</div>').join('');
 }
-function editInvoiceMeta(){
- const items=data.filter(x=>x.invoice===selectedInvoice&&!x.neverCommitted);if(!items.length)return;
- const first=items[0];let n=prompt('Hisob-faktura raqami',selectedInvoice);if(n===null)return;n=n.trim();if(!n){notify('Faktura raqami bo‘sh bo‘lmasin',true);return}
- if(n!==selectedInvoice&&data.some(x=>x.invoice===n&&!x.neverCommitted)){notify('Bu faktura raqami allaqachon mavjud',true);return}
- let d=prompt('Sana (YYYY-MM-DD)',first.date);if(d===null)return;d=d.trim();if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||Number.isNaN(Date.parse(d))){notify('Sanani YYYY-MM-DD shaklida kiriting',true);return}
- let supplier=prompt('Yetkazib beruvchi',first.supplier||'');if(supplier===null)return;
- let location=prompt('Ombor',first.location);if(location===null)return;if(!location.trim()){notify('Ombor bo‘sh bo‘lmasin',true);return}
- for(const x of items){x.invoice=n;x.date=d;x.supplier=supplier.trim();x.location=location.trim()}
- selectedInvoice=n;persist();notify('Hisob-faktura yangilandi');
+function editInvoiceMeta(){if(!requirePermission("edit"))return;const i=data.findIndex(x=>x.invoice===selectedInvoice&&!x.neverCommitted);if(i<0)return;openEdit("invoice",i)}
+function openEdit(type,index){if(!requirePermission("edit"))return;
+ const x=(type==="draft"?draft:data)[index];if(!x)return;
+ editContext={type,index,originalBarcode:x.barcode,originalInvoice:x.invoice};
+ $("editTitle").textContent=type==="invoice"?"✎ Hisob-fakturani tahrirlash":"✎ Tovar ma’lumotlarini tahrirlash";
+ $("editHint").textContent=type==="invoice"?"Bu o‘zgarishlar hisob-fakturadagi barcha tovarlarga qo‘llanadi.":"Barcha ma’lumotlarni shu oynada o‘zgartiring.";
+ $("editProductFields").classList.toggle("hidden",type==="invoice");
+ $("eInvoice").value=x.invoice||"";$("eDate").value=x.date||"";$("eSupplier").value=x.supplier||"";
+ const sel=$("eLocation");if(![...sel.options].some(o=>o.value===x.location)){const opt=document.createElement("option");opt.value=x.location;opt.textContent=x.location;sel.add(opt)}sel.value=x.location;
+ $("eName").value=x.name||"";$("eCost").value=x.cost;$("eBarcode").value=x.barcode||"";
+ $("editPanel").classList.add("show");document.body.classList.add("editing");
+}
+function closeEdit(){$("editPanel").classList.remove("show");document.body.classList.remove("editing");editContext=null}
+function saveEdit(){if(!requirePermission("edit")){closeEdit();return;}
+ if(!editContext)return;
+ const {type,index,originalBarcode,originalInvoice}=editContext;
+ const x=(type==="draft"?draft:data)[index];if(!x||x.barcode!==originalBarcode){notify("Tovar o‘zgargan. Qayta oching.",true);return}
+ const invoice=$("eInvoice").value.trim(),date=$("eDate").value,supplier=$("eSupplier").value.trim(),location=$("eLocation").value.trim();
+ if(!invoice||!date||!location||!/^\d{4}-\d{2}-\d{2}$/.test(date)||Number.isNaN(Date.parse(date))){notify("Faktura raqami, sana va omborni to‘g‘ri kiriting.",true);return}
+ if(type==="draft"){
+  if(draft.some((z,i)=>i!==index&&(z.invoice!==invoice||z.date!==date||z.supplier!==supplier||z.location!==location))){notify("Qoralamadagi tovarlar bir fakturaga tegishli bo‘lishi kerak. Avval fakturani tasdiqlang.",true);return}
+  if(data.some(z=>!z.neverCommitted&&z.invoice===invoice)){notify("Bu faktura allaqachon saqlangan.",true);return}
+ }else if(invoice!==originalInvoice&&data.some(z=>!z.neverCommitted&&z.invoice===invoice)){notify("Bu faktura raqami allaqachon mavjud.",true);return}
+ let name=x.name,cost=x.cost,barcode=x.barcode;
+ if(type!=="invoice"){
+  name=$("eName").value.trim();barcode=$("eBarcode").value.trim();cost=Number($("eCost").value);
+  if(!name||!barcode||$("eCost").value===""||!Number.isFinite(cost)||cost<0){notify("Nom, narx va barkodni to‘g‘ri kiriting.",true);return}
+  if(barcode!==originalBarcode&&used(barcode,x)){notify("Bu barkod ilgari ishlatilgan!",true);return}
+ }
+ // All products in the same saved invoice share invoice metadata.
+ const group=type==="draft"?draft.filter(z=>z.invoice===originalInvoice):data.filter(z=>z.invoice===originalInvoice&&!z.neverCommitted);
+ const changes=group.map(z=>({z,invoice:z.invoice,date:z.date,supplier:z.supplier,location:z.location,name:z.name,cost:z.cost,barcode:z.barcode}));
+ const oldRetired=retired.slice(),oldSelected=selectedInvoice;
+ for(const z of group){z.invoice=invoice;z.date=date;z.supplier=supplier;z.location=location}
+ if(type!=="invoice"){
+  x.name=name;x.cost=cost;
+  if(barcode!==originalBarcode){retired.push(originalBarcode);x.barcode=barcode}
+ }
+ if(type==="draft"){$("invoice").value=invoice;$("date").value=date;$("supplier").value=supplier;$("location").value=location}
+ if(type!=="draft"&&selectedInvoice===originalInvoice)selectedInvoice=invoice;
+ if(!persist()){
+  for(const old of changes)Object.assign(old.z,{invoice:old.invoice,date:old.date,supplier:old.supplier,location:old.location,name:old.name,cost:old.cost,barcode:old.barcode});
+  retired=oldRetired;selectedInvoice=oldSelected;return;
+ }
+ closeEdit();notify("Barcha o‘zgarishlar saqlandi!");
 }
 
-function renderAll(){renderInvoices();renderDraft();renderWarehouse();salePreview();renderHistory();renderDeleted();const a=data.filter(x=>!x.deleteMarked&&!x.finalDeleted);const stock=a.filter(x=>!x.sold),sold=a.filter(x=>x.sold);$("summary").textContent="Ombor: "+stock.length+" dona · Sotilgan: "+sold.length+" dona";$("report").innerHTML="<p><b>Faol hisobot</b></p><p>Kirim: "+a.length+" dona · "+money(a.reduce((s,x)=>s+Number(x.cost),0))+" so‘m</p><p>Sotuv: "+sold.length+" dona · "+money(sold.reduce((s,x)=>s+Number(x.salePrice||0),0))+" so‘m</p>"}
-let qrScanner=null,scannerStarting=false;
+
+// Excel import: do not modify data until all rows have passed validation.
+function parseCSV(text){
+ const rows=[];let row=[],cell="",quoted=false;
+ text=String(text).replace(/^\uFEFF/,"");
+ const firstLine=text.split(/\r?\n/,1)[0]||"";
+ const sep=(firstLine.match(/;/g)||[]).length>(firstLine.match(/,/g)||[]).length?";":",";
+ for(let i=0;i<text.length;i++){
+  const c=text[i];
+  if(c==='"'){if(quoted&&text[i+1]==='"'){cell+='"';i++}else quoted=!quoted}
+  else if(c===sep&&!quoted){row.push(cell);cell=""}
+  else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cell);if(row.some(v=>v.trim()))rows.push(row);row=[];cell=""}
+  else cell+=c;
+ }
+ row.push(cell);if(row.some(v=>v.trim()))rows.push(row);
+ if(quoted)throw Error("CSV faylda yopilmagan qo‘shtirnoq bor.");
+ return rows;
+}
+function excelRowsToProducts(rows){
+ if(!rows.length)throw Error("Fayl bo‘sh.");
+ const norm=v=>String(v??"").trim().toLowerCase().replace(/[’‘`]/g,"'").replace(/\s+/g," ");
+ const heads=rows[0].map(norm);
+ const col=(names)=>heads.findIndex(h=>names.includes(h));
+ const ni=col(["tovar nomi","mahsulot nomi","nomi","tovar","mahsulot","name","наименование","наименование товара"]);
+ const bi=col(["barkod","shtrixkod","shtrix-kod","barcode","штрихкод","штрих-код"]);
+ const ci=col(["xarid narxi","narx","tannarx","prixod narxi","цена","цена закупки","cost"]);
+ if(ni<0||bi<0||ci<0)throw Error("Ustunlarni topib bo‘lmadi. Sarlavhalar: Tovar nomi, Barkod, Xarid narxi.");
+ const seen=new Set(),out=[];
+ for(let i=1;i<rows.length;i++){
+  const r=rows[i];if(!r||r.every(v=>String(v??"").trim()===""))continue;
+  const name=String(r[ni]??"").trim(),barcode=String(r[bi]??"").trim();
+  const raw=String(r[ci]??"").replace(/\s/g,"").replace(/,/g,".");
+  const cost=Number(raw);
+  if(!name||!barcode||raw===""||!Number.isFinite(cost)||cost<0)throw Error((i+1)+"-qatorda nom, barkod yoki narx noto‘g‘ri.");
+  if(seen.has(barcode))throw Error((i+1)+"-qatorda barkod takrorlangan: "+barcode);
+  if(used(barcode))throw Error((i+1)+"-qatordagi barkod avval ishlatilgan: "+barcode);
+  seen.add(barcode);out.push({name,barcode,cost});
+ }
+ if(!out.length)throw Error("Faylda tovar topilmadi.");
+ return out;
+}
+async function importExcel(){
+ const status=$("excelStatus"),file=$("excelFile").files[0];
+ const invoice=$("invoice").value.trim(),date=$("date").value,supplier=$("supplier").value.trim(),location=$("location").value;
+ if(!file){notify("Excel faylni tanlang.",true);return}
+ if(!invoice||!date||!location){notify("Avval faktura raqami, sana va omborni kiriting.",true);return}
+ if(data.some(x=>!x.neverCommitted&&x.invoice===invoice)){notify("Bu hisob-faktura allaqachon saqlangan.",true);return}
+ if(draft.length&&draft.some(x=>x.invoice!==invoice||x.date!==date||x.supplier!==supplier||x.location!==location)){notify("Avvalgi faktura qoralamasini yakunlang.",true);return}
+ status.textContent="Fayl tekshirilmoqda…";
+ try{
+  let rows=[];
+  if(/\.csv$/i.test(file.name))rows=parseCSV(await file.text());
+  else if(/\.xlsx?$/i.test(file.name)){
+   if(typeof XLSX==="undefined")throw Error("Excel kutubxonasi yuklanmadi. Internetni tekshiring yoki CSV formatdan foydalaning.");
+   const wb=XLSX.read(await file.arrayBuffer(),{type:"array",raw:true});
+   if(!wb.SheetNames.length)throw Error("Excelda varaq yo‘q.");
+   rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{header:1,defval:"",raw:true});
+  }else throw Error("Faqat XLSX, XLS yoki CSV faylni tanlang.");
+  const products=excelRowsToProducts(rows);
+  const items=products.map(x=>({...x,invoice,date,supplier,location,sold:false,createdAt:new Date().toISOString(),deleteMarked:false}));
+  if(!confirm(products.length+" dona tovarni qoralamaga qo‘shamizmi?")){status.textContent="Bekor qilindi";return}
+  draft.push(...items);
+  if(!persist()){draft.splice(draft.length-items.length,items.length);return}
+  status.textContent=products.length+" dona mahsulot qoralamaga qo‘shildi. Endi tekshirib, Prixodni tasdiqlang.";
+  $("excelFile").value="";
+ }catch(e){status.textContent="Xatolik: "+String(e.message||e);notify(String(e.message||e),true)}
+}
+
+
+// V16.5: Kassa. Sale payments remain in invoice records; separate orders use a dedicated key.
+const CASH_KEY="sher_ai_nasiya_cash_v16_5",CASH_METHODS=["naqd","karta","xolis","terminal"];
+const CASH_LABELS={naqd:"Naqd",karta:"Karta",xolis:"Xolis",terminal:"Terminal"};
+let cashOrders=[];try{const a=JSON.parse(localStorage.getItem(CASH_KEY)||"[]");if(Array.isArray(a))cashOrders=a}catch(e){}
+const CASH_TRANSFER_KEY="sher_ai_nasiya_cash_transfers_v16_7";
+let cashTransfers=[];try{const v=JSON.parse(localStorage.getItem(CASH_TRANSFER_KEY)||"[]");if(Array.isArray(v))cashTransfers=v}catch(e){}
+const CASH_CLOSED_KEY="sher_ai_nasiya_closed_days_v16_8";
+const CASH_DAY_LOG_KEY="sher_ai_nasiya_day_log_v16_9";
+let cashDayLog=[];try{const q=JSON.parse(localStorage.getItem(CASH_DAY_LOG_KEY)||"[]");if(Array.isArray(q))cashDayLog=q}catch(e){}
+function cashLogDay(action,date){cashDayLog.push({action,date,at:new Date().toISOString(),actor:action==="reopen"?"Admin (demo)":"Kassir (demo)"});localStorage.setItem(CASH_DAY_LOG_KEY,JSON.stringify(cashDayLog))}
+function cashReopenDay(date){if(!cashIsClosed(date)){notify("Bu kun yopilmagan.",true);return}if(!confirm(date+" sanasini qayta OCHMOQCHIMISIZ?\nBu amal faqat Admin huquqi bilan bajarilishi kerak."))return;const old=cashClosedDays.slice();cashClosedDays=cashClosedDays.filter(x=>x.date!==date);try{localStorage.setItem(CASH_CLOSED_KEY,JSON.stringify(cashClosedDays));cashLogDay("reopen",date);cashRenderDayStatus();renderCash();notify(date+" qayta ochildi.")}catch(e){cashClosedDays=old;notify("Saqlashda xatolik",true)}}
+
+let cashClosedDays=[];try{const x=JSON.parse(localStorage.getItem(CASH_CLOSED_KEY)||"[]");if(Array.isArray(x))cashClosedDays=x}catch(e){}
+function cashIsClosed(date){return cashClosedDays.some(x=>x.date===date)}
+function cashCanOperate(date){if(cashIsClosed(saleDateLocal(new Date()))||cashIsClosed(date)){notify("🔒 Kun yopilgan. Bugungi sana bilan yangi operatsiya yoki schyot-faktura yaratib bo‘lmaydi.",true);return false}return true}
+function cashRenderDayStatus(){const el=$("cashDayStatus");if(!el)return;const today=saleDateLocal(new Date()),closed=cashIsClosed(today);el.innerHTML=closed?"🔒 <b>"+today+" — KUN YOPILGAN</b>. Yangi sotuv, to‘lov, kirim va chiqim taqiqlangan.":"🟢 <b>"+today+" — KUN OCHIQ</b>. Kassir kun oxirida kunni yopadi."}
+function cashCloseToday(){const today=saleDateLocal(new Date());if(cashIsClosed(today)){notify("Bugungi kun allaqachon yopilgan.",true);return}const pending=cashTransfers.filter(x=>x.status==="pending").length;if(!confirm(today+" sanasini YOPASIZMI?\nKun yopilgach bugungi sana bilan sotuv fakturasi, to‘lov, kirim, chiqim va yangi o‘tkazma yaratib bo‘lmaydi.\nTasdiqlanmagan o‘tkazmalar: "+pending+" ta. Ularni admin keyin qabul qilishi mumkin."))return;cashClosedDays.push({date:today,closedAt:new Date().toISOString()});try{localStorage.setItem(CASH_CLOSED_KEY,JSON.stringify(cashClosedDays))}catch(e){cashClosedDays.pop();notify("Kun yopilishi saqlanmadi",true);return}cashLogDay("close",today);cashRenderDayStatus();notify("🔒 "+today+" kuni yopildi.")}
+let cashAccount="ordinary";
+let cashView="balance",cashFrom="",cashTo="";
+function cashAccountSelect(){return '<label>Hisob</label><select id="cashAccount" onchange="cashAccount=this.value;renderCash()"><option value="ordinary"'+(cashAccount==='ordinary'?' selected':'')+'>Oddiy kassa</option><option value="main"'+(cashAccount==='main'?' selected':'')+'>Asosiy kassa</option></select>'}
+function cashTransferPersist(){try{localStorage.setItem(CASH_TRANSFER_KEY,JSON.stringify(cashTransfers));renderCash()}catch(e){notify("O‘tkazma saqlanmadi",true)}}
+function cashPending(method){return cashTransfers.filter(x=>x.status==="pending"&&x.method===method).reduce((a,x)=>a+Number(x.amount),0)}
+function cashAccountRows(account){return cashTransactions().filter(x=>(x.account||"ordinary")===account)}
+function cashAvailable(method){return (cashBalances(cashAccountRows("ordinary"))[method]||0)-cashPending(method)}
+function cashCreateTransfer(){if(!cashCanOperate(saleDateLocal(new Date())))return;const method=$("transferMethod").value,amount=Number($("transferAmount").value),date=$("transferDate").value,note=$("transferNote").value.trim();if(!CASH_METHODS.includes(method)||!date||!Number.isSafeInteger(amount)||amount<=0){notify("Ma’lumotlarni tekshiring",true);return}if(!cashCanOperate(date))return;if(amount>cashAvailable(method)){notify("Oddiy kassada mavjud mablag‘ yetarli emas",true);return}if(!confirm("Asosiy kassaga pul topshirish so‘rovini yuborasizmi?"))return;cashTransfers.push({id:"TR-"+Date.now()+"-"+Math.random().toString(36).slice(2,7),method,amount,date,note,status:"pending",createdAt:new Date().toISOString()});cashTransferPersist();notify("Tasdiqlash kutilmoqda")}
+function cashTransferDecision(id,accept){const x=cashTransfers.find(z=>z.id===id&&z.status==="pending");if(!x){notify("O‘tkazma topilmadi yoki avval ko‘rib chiqilgan.",true);return}if(!confirm(accept?"Asosiy kassaga qabul qilishni tasdiqlaysizmi?":"O‘tkazmani rad etasizmi?"))return;if(accept&&cashBalances(cashAccountRows("ordinary"))[x.method]<Number(x.amount)){notify("Oddiy kassada mablag‘ yetarli emas",true);return}const old=x.status;x.status=accept?"approved":"rejected";x.decidedAt=new Date().toISOString();try{localStorage.setItem(CASH_TRANSFER_KEY,JSON.stringify(cashTransfers));renderCash();notify(accept?"✓ Pul Asosiy kassaga o‘tkazildi.":"O‘tkazma rad etildi. Pul Oddiy kassada qoldi.")}catch(e){x.status=old;delete x.decidedAt;notify("O‘tkazma saqlanmadi",true)}}
+
+function cashTab(v){cashRenderDayStatus();cashView=v;$("cashHome").classList.add("hidden");$("cashDetail").classList.remove("hidden");renderCash();window.scrollTo(0,0)}
+function cashBack(){cashRenderDayStatus();$("cashDetail").classList.add("hidden");$("cashHome").classList.remove("hidden");window.scrollTo(0,0)}
+function cashMethodSelect(id){return '<select id="'+id+'">'+CASH_METHODS.map(x=>'<option value="'+x+'">'+CASH_LABELS[x]+'</option>').join('')+'</select>'}
+function cashTransactions(){
+ const rows=[];
+ saleInvoices.forEach(inv=>{
+  const base=Number(inv.advance)||0;
+  // Legacy invoices without payment-method metadata are classified as Naqd.
+  const first=(inv.payments||[]).some(p=>p.type==="first_schedule_payment");
+  const firstSum=(inv.payments||[]).filter(p=>p.type==="first_schedule_payment"&&!p.deleteMarked).reduce((a,p)=>a+Number(p.amount||0),0);
+  const advanceBase=Math.max(0,base);
+  if(advanceBase>0)rows.push({id:"sale-advance-"+inv.number,date:saleInvoiceDay(inv),method:inv.advanceMethod||inv.payMethod||"naqd",amount:advanceBase,type:"in",source:"Sotuv",person:inv.customerFio||"",invoice:inv.number,note:"Boshlang‘ich / to‘liq to‘lov"});
+  // Old code counts todayPayment inside invoiceReceived. Do not double count legacy todayPayment and first_schedule_payment.
+  (inv.payments||[]).forEach((p,i)=>{if(p.deleteMarked||p.finalDeleted)return;const amount=Number(p.amount)||0;if(amount>0)rows.push({id:"sale-payment-"+inv.number+"-"+(p.id||i),date:p.date||saleInvoiceDay(inv),method:p.method||inv.payMethod||"naqd",amount,type:"in",source:"Faktura to‘lovi",person:inv.customerFio||"",invoice:inv.number,note:p.type==="first_schedule_payment"?"Birinchi oylik to‘lovi":"Oylik to‘lov"})});
+  if(!first&&Number(inv.todayPayment)>0)rows.push({id:"sale-today-"+inv.number,date:saleInvoiceDay(inv),method:inv.payMethod||"naqd",amount:Number(inv.todayPayment),type:"in",source:"Faktura to‘lovi",person:inv.customerFio||"",invoice:inv.number,note:"Oldingi versiyadagi to‘lov"});
+ });
+ cashOrders.filter(x=>!x.deleteMarked).forEach(x=>rows.push({...x,account:x.account||"ordinary",source:x.source||"Kassa orderi"}));
+ cashTransfers.filter(x=>x.status==="approved").forEach(x=>{const z={date:x.date,method:x.method,amount:x.amount,source:"Ichki o‘tkazma",person:"Oddiy → Asosiy",note:x.note||"Asosiy kassaga pul topshirish"};rows.push({...z,id:x.id+"-out",type:"out",account:"ordinary"});rows.push({...z,id:x.id+"-in",type:"in",account:"main"})});
+ return rows.sort((a,b)=>String(b.date).localeCompare(String(a.date))||String(b.id).localeCompare(String(a.id)));
+}
+function cashBalances(rows){const b=Object.fromEntries(CASH_METHODS.map(x=>[x,0]));rows.forEach(x=>{if(CASH_METHODS.includes(x.method))b[x.method]+=(x.type==="out"?-1:1)*Number(x.amount||0)});return b}
+function cashDateInput(){return '<div class="invoice-date-filter"><div><label>Boshlanish sanasi</label><input type="date" id="cashFrom" value="'+cashFrom+'" onchange="cashFrom=this.value;renderCash()"></div><div><label>Tugash sanasi</label><input type="date" id="cashTo" value="'+cashTo+'" onchange="cashTo=this.value;renderCash()"></div></div>'}
+function cashFiltered(){return cashTransactions().filter(x=>(!cashFrom||x.date>=cashFrom)&&(!cashTo||x.date<=cashTo))}
+function cashTable(rows,editable=false,totals=false){return '<div class="scroll"><table><tr><th>Sana</th><th>Tur</th><th>To‘lov usuli</th><th>Summa</th><th>Kimdan / kimga</th><th>Faktura / izoh</th>'+(editable?'<th>Amal</th>':'')+'</tr>'+rows.map(x=>'<tr><td>'+esc(x.date)+'</td><td>'+(x.type==="out"?'Chiqim':'Kirim')+'</td><td>'+esc(CASH_LABELS[x.method]||x.method)+'</td><td>'+money(x.amount)+'</td><td>'+esc(x.person||'')+'</td><td>'+esc((x.invoice||'')+' '+(x.note||''))+'</td>'+(editable?'<td>'+(x.source==="Kassa orderi"?'<button class="secondary" onclick="cashEdit('+JSON.stringify(x.id).replace(/"/g,'&quot;')+')">✎</button> <button class="danger" onclick="cashMark('+JSON.stringify(x.id).replace(/"/g,'&quot;')+')">🗑</button>':'<span class="muted">Fakturada</span>')+'</td>':'')+'</tr>').join('')+(totals?'<tr class="cash-total-row"><td colspan="3"><b>ITOG</b></td><td colspan="'+(editable?'4':'3')+'"><b>Kirim: '+money(rows.filter(x=>x.type==="in").reduce((a,x)=>a+Number(x.amount||0),0))+' so‘m | Chiqim: '+money(rows.filter(x=>x.type==="out").reduce((a,x)=>a+Number(x.amount||0),0))+' so‘m | Qoldiq: '+money(rows.reduce((a,x)=>a+(x.type==="out"?-1:1)*Number(x.amount||0),0))+' so‘m</b></td></tr>':'')+'</table></div>'+(rows.length?'':'<p class="muted">Ma’lumot yo‘q.</p>')}
+function cashGroupedTable(rows,editable=false){
+ const sum=(xs,type)=>xs.filter(x=>x.type===type).reduce((a,x)=>a+Number(x.amount||0),0);
+ const totalIn=sum(rows,"in"),totalOut=sum(rows,"out");
+ let out='';
+ CASH_METHODS.forEach(method=>{
+  const part=rows.filter(x=>x.method===method),incoming=sum(part,"in"),outgoing=sum(part,"out");
+  out+='<h4 style="margin:20px 0 8px">'+esc(CASH_LABELS[method])+' — '+part.length+' ta operatsiya</h4>';
+  out+=cashTable(part,editable,true);
+ });
+ out+='<div class="notice" style="border:2px solid #274bd2;margin-top:24px"><b>UMUMIY ITOG (BARCHA TO‘LOV TURLARI)</b><br>Kirim: '+money(totalIn)+' so‘m · Chiqim: '+money(totalOut)+' so‘m · Qoldiq: '+money(totalIn-totalOut)+' so‘m</div>';
+ return out;
+}
+function renderCash(){cashRenderDayStatus();const el=$("cashContent");if(!el)return;if(cashView==="days"){
+ const safe=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+ const days=cashClosedDays.slice().sort((a,b)=>b.date.localeCompare(a.date));
+ el.innerHTML=`<h3>🔑 Admin — Yopilgan kunlarni boshqarish</h3><p class="muted">Bu demo versiyada haqiqiy login/rol himoyasi hali ulanmagan. Qayta ochish faqat admin uchun mo‘ljallangan.</p>`+
+ (days.length?days.map(x=>`<div class="notice">🔒 <b>${safe(x.date)}</b> · ${safe(x.closedAt||"")}<br><button class="secondary" onclick="cashReopenDay('${x.date}')">🔓 Kunni qayta ochish</button></div>`).join(""):`<p>Yopilgan kunlar yo‘q.</p>`)+
+ `<h4>Kun yopish / ochish tarixi</h4>`+(cashDayLog.length?cashDayLog.slice().reverse().map(x=>`<div class="notice">${x.action==="close"?"🔒 Yopildi":"🔓 Qayta ochildi"} · ${safe(x.date)} · ${safe(x.actor)} · ${safe(x.at)}</div>`).join(""):`<p>Tarix hozircha bo‘sh.</p>`);return;
+}const all=cashTransactions(),balances=cashBalances(all.filter(x=>(x.account||"ordinary")===cashAccount)),total=Object.values(balances).reduce((a,b)=>a+b,0);let h='';
+ if(cashView==="balance")h='<h3>👛 Kassa qoldig‘i</h3>'+cashAccountSelect()+'<p class="muted">'+(cashAccount==='ordinary'?'Oddiy kassa — kassir':'Asosiy kassa — admin')+'</p>'+'<div class="tilegrid">'+CASH_METHODS.map(m=>'<div class="cash-balance"><b>'+CASH_LABELS[m]+'</b><strong>'+money(balances[m])+' so‘m</strong></div>').join('')+'</div><div class="notice"><b>Umumiy qoldiq: '+money(total)+' so‘m</b></div><p class="muted">Sotuv va Fakturalar to‘lovlari avtomatik kirim hisoblanadi. Oldingi fakturalarda to‘lov turi ko‘rsatilmagan bo‘lsa, Naqd sifatida aks etadi.</p>';
+ if(cashView==="income"||cashView==="expense")h=cashAccountSelect()+'<h3>'+(cashView==="income"?'⬇️ Kirim orderi':'⬆️ Chiqim orderi')+'</h3><label>Sana</label><input type="date" id="cashDate" value="'+saleDateLocal(new Date())+'"><label>To‘lov turi *</label>'+cashMethodSelect('cashMethod')+'<label>'+(cashView==="income"?'Kimdan qabul qilindi':'Kimga berildi')+' *</label><input id="cashPerson" placeholder="F.I.O. yoki tashkilot"><label>Summa (so‘m) *</label><input type="number" id="cashAmount" min="1" placeholder="Summani kiriting"><label>Izoh</label><input id="cashNote" placeholder="To‘lov sababi"><button class="full" onclick="cashSaveOrder()">✓ Orderni saqlash</button><p class="muted">Bu forma mustaqil kassa orderi. Mijozning qarzini kamaytirish uchun quyidagi faktura to‘lovidan foydalaning.</p>';
+ if(cashView==="income")h+='<hr><h3>👥 Mijozning faktura to‘lovini qabul qilish</h3><p class="muted">Faktura raqami yoki mijoz F.I.O. bo‘yicha qidiring. To‘lov fakturadagi qarzni kamaytiradi va avtomatik kassaga kirim bo‘ladi.</p><input id="cashInvoiceSearch" oninput="cashFindInvoices()" placeholder="Faktura, F.I.O. yoki JSHSHIR"><div id="cashInvoiceResults"></div>';
+ if(cashView==="register"||cashView==="payments"||cashView==="report"){const rows=cashFiltered().filter(x=>(x.account||"ordinary")===cashAccount).filter(x=>cashView!=="payments"||x.source==="Faktura to‘lovi"||x.source==="Sotuv");const sums=cashBalances(rows);h=cashAccountSelect()+'<h3>'+(cashView==="register"?'📖 Kassa reestri':cashView==="payments"?'🧾 To‘lovlar tarixi':'🖨️ Kassa hisoboti')+'</h3>'+cashDateInput()+'<div class="notice">Kirim: '+money(rows.filter(x=>x.type==="in").reduce((a,x)=>a+x.amount,0))+' so‘m · Chiqim: '+money(rows.filter(x=>x.type==="out").reduce((a,x)=>a+x.amount,0))+' so‘m</div>'+cashGroupedTable(rows,cashView==="register");if(cashView==="report")h+='<div class="notice">'+CASH_METHODS.map(m=>CASH_LABELS[m]+': '+money(sums[m])+' so‘m').join(' · ')+'</div><button class="full secondary" onclick="cashPrint()">🖨 Chop etish / PDF</button>'}
+ if(cashView==="register")h+='<button type="button" class="full secondary" onclick="cashPrint()">🖨 Reestrni chop etish / PDF</button>';
+ if(cashView==="register"){const marked=cashOrders.filter(x=>x.deleteMarked);if(marked.length)h+='<h3>🗑 O‘chirishga belgilangan orderlar</h3>'+marked.map(x=>'<div class="item marked"><b>'+esc(x.date)+' · '+esc(x.person)+' · '+money(x.amount)+'</b><div class="actions"><button class="secondary" onclick="cashRestore('+JSON.stringify(x.id).replace(/"/g,'&quot;')+')">↩ Qayta tiklash</button><button class="danger" onclick="cashFinal('+JSON.stringify(x.id).replace(/"/g,'&quot;')+')">Butunlay o‘chirish</button></div></div>').join('')}
+ if(cashView==="transfer")h='<h3>🔄 Asosiy kassaga pul topshirish</h3><p class="muted">Admin tasdiqlamaguncha summa Oddiy kassada band qilinadi.</p><label>Sana</label><input id="transferDate" type="date" value="'+saleDateLocal(new Date())+'"><label>To‘lov turi</label>'+cashMethodSelect('transferMethod')+'<div class="notice">Mavjud summa (to‘lov turini tanlab tekshiring): '+CASH_METHODS.map(m=>CASH_LABELS[m]+' '+money(cashAvailable(m))).join(' · ')+'</div><label>Summa</label><input id="transferAmount" type="number" min="1"><label>Izoh</label><input id="transferNote"><button class="full" onclick="cashCreateTransfer()">Asosiy kassaga pul topshirish</button><h3>O‘tkazmalar tarixi</h3>'+cashTransfers.slice().reverse().map(x=>'<div class="item"><b>'+esc(x.date)+' · '+esc(CASH_LABELS[x.method])+' · '+money(x.amount)+' so‘m</b><div class="muted">'+(x.status==='pending'?'🟠 Tasdiqlash kutilmoqda':x.status==='approved'?'🟢 Tasdiqlangan':'🔴 Rad etilgan')+'</div></div>').join('');
+ if(cashView==="approvals")h='<h3>✅ Asosiy kassa — kutilayotgan o‘tkazmalar</h3><p class="muted">Tasdiqlash faqat admin huquqi bilan amalga oshirilishi kerak. Bu demo versiyada haqiqiy login/rol himoyasi hali ulanmagan.</p>'+cashTransfers.filter(x=>x.status==='pending').map(x=>'<div class="item"><b>'+esc(x.date)+' · '+esc(CASH_LABELS[x.method])+' · '+money(x.amount)+' so‘m</b><p>'+esc(x.note||'')+'</p><button type="button" data-transfer-id="'+esc(x.id)+'" data-transfer-action="accept">✓ Qabul qilish</button> <button type="button" class="danger" data-transfer-id="'+esc(x.id)+'" data-transfer-action="reject">Rad etish</button></div>').join('')+'<p class="muted">'+(cashTransfers.some(x=>x.status==='pending')?'':'Kutilayotgan o‘tkazma yo‘q.')+'</p>';
+ el.innerHTML=h;
+}
+document.addEventListener("click",function(ev){const btn=ev.target.closest("button[data-transfer-id]");if(!btn)return;ev.preventDefault();cashTransferDecision(btn.getAttribute("data-transfer-id"),btn.getAttribute("data-transfer-action")==="accept")});
+function cashFindInvoices(){const q=$("cashInvoiceSearch").value.trim().toUpperCase(),el=$("cashInvoiceResults");if(!q){el.innerHTML="";return}const rows=saleInvoices.filter(x=>x.kind==="installment"&&[x.number,x.customerFio,x.customerPinfl].some(z=>String(z||"").toUpperCase().includes(q))&&invoiceReceived(x)<Number(x.total)).slice(0,20);el.innerHTML=rows.map(x=>'<div class="item"><b>'+esc(x.customerFio)+' · '+esc(x.number)+'</b><div class="muted">Qolgan qarz: '+money(Math.max(0,Number(x.total)-invoiceReceived(x)))+' so‘m</div><button onclick="receiveInvoicePayment('+JSON.stringify(x.number).replace(/"/g,'&quot;')+',true)">💰 To‘lov qabul qilish</button></div>').join('')||'<p class="muted">Aktiv faktura topilmadi.</p>'}
+function cashSaveOrder(){if(!cashCanOperate(saleDateLocal(new Date())))return;const type=cashView==="expense"?"out":"in",date=$("cashDate").value,method=$("cashMethod").value,person=$("cashPerson").value.trim(),amount=Number($("cashAmount").value),note=$("cashNote").value.trim();if(!date||!person||!CASH_METHODS.includes(method)||!Number.isSafeInteger(amount)||amount<=0){notify("Sana, to‘lov turi, kimdan/kimga va summani to‘g‘ri kiriting.",true);return}if(!cashCanOperate(date))return;if(type==="out"&&(cashAccount==="ordinary"?cashAvailable(method):cashBalances(cashAccountRows("main"))[method])<amount){notify("Tanlangan hisobda mablag‘ yetarli emas.",true);return}if(!confirm((type==="in"?"Kirim":"Chiqim")+" orderini saqlaysizmi?\n"+CASH_LABELS[method]+" — "+money(amount)+" so‘m"))return;const x={id:"CASH-"+Date.now()+"-"+Math.random().toString(36).slice(2,7),date,method,person,amount,note,type,account:cashAccount,source:"Kassa orderi",createdAt:new Date().toISOString()};const next=[...cashOrders,x];try{localStorage.setItem(CASH_KEY,JSON.stringify(next));cashOrders=next}catch(e){notify("Kassa orderi saqlanmadi.",true);return}cashTab("register");notify("Kassa orderi saqlandi.")}
+function cashEdit(id){if(!cashCanOperate(saleDateLocal(new Date())))return;const x=cashOrders.find(z=>z.id===id&&!z.deleteMarked);if(!x)return;const raw=prompt("Yangi summa (so‘m):",String(x.amount));if(raw===null)return;const amount=Number(raw.trim().replace(/\s/g,''));if(!Number.isSafeInteger(amount)||amount<=0){notify("Noto‘g‘ri summa",true);return}if(x.type==="out"&&cashBalances(cashAccountRows(x.account||"ordinary"))[x.method]+x.amount<amount){notify("Hisobda mablag‘ yetarli emas",true);return}if(!confirm("Order summasini o‘zgartirasizmi?"))return;cashOrders=cashOrders.map(z=>z.id===id?{...z,amount,editedAt:new Date().toISOString()}:z);cashPersist()}
+function cashMark(id){if(!cashCanOperate(saleDateLocal(new Date())))return;if(!confirm("Rostdan ham o‘chirmoqchimisiz?"))return;cashOrders=cashOrders.map(x=>x.id===id?{...x,deleteMarked:true}:x);cashPersist()}
+function cashRestore(id){if(!cashCanOperate(saleDateLocal(new Date())))return;if(!confirm("Orderni qayta tiklaysizmi?"))return;const x=cashOrders.find(z=>z.id===id);if(!x)return;if(x.type==="out"&&cashBalances(cashAccountRows(x.account||"ordinary"))[x.method]<x.amount){notify("Tiklash uchun mablag‘ yetarli emas.",true);return}cashOrders=cashOrders.map(z=>z.id===id?{...z,deleteMarked:false}:z);cashPersist()}
+function cashFinal(id){if(!confirm("Rostdan ham BUTUNLAY o‘chirmoqchimisiz?"))return;cashOrders=cashOrders.filter(x=>x.id!==id);cashPersist()}
+function cashPersist(){try{localStorage.setItem(CASH_KEY,JSON.stringify(cashOrders));renderCash();renderDeleted()}catch(e){notify("Saqlashda xatolik",true)}}
+function cashPrint(){
+ const rows=cashFiltered().filter(x=>(x.account||"ordinary")===cashAccount),w=window.open('','_blank');
+ if(!w){notify("Chop etish oynasi bloklangan",true);return}
+ const sum=(xs,t)=>xs.filter(x=>x.type===t).reduce((a,x)=>a+Number(x.amount||0),0);
+ const totalIn=sum(rows,"in"),totalOut=sum(rows,"out");
+ let html='<!doctype html><html><head><meta charset="utf-8"><title>Kassa hisoboti</title><style>@page{size:A4 landscape;margin:10mm}body{font:12px Arial}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:5px;text-align:left}h2{margin:8px 0}h3{margin:16px 0 5px}.notice{padding:8px;background:#f1f4f9;margin:6px 0}.scroll{width:100%}.cash-total-row td{background:#e6ecf7;font-weight:bold;border-top:2px solid #555;white-space:normal}</style></head><body>';
+ html+='<h2>SHER AI NASIYA — Kassa hisoboti</h2><p>'+(cashAccount==="main"?'Asosiy kassa':'Oddiy kassa')+' · '+esc(cashFrom||'Boshidan')+' — '+esc(cashTo||'Bugungacha')+'</p>';
+ CASH_METHODS.forEach(m=>{const part=rows.filter(x=>x.method===m),inc=sum(part,'in'),out=sum(part,'out');html+='<h3>'+esc(CASH_LABELS[m])+'</h3>'+cashTable(part,false,true)});
+ html+='<div class="notice" style="border:2px solid #333;margin-top:20px;padding:12px;font-size:14px"><b>UMUMIY ITOG — BARCHA TO‘LOV TURLARI</b><br>Kirim: '+money(totalIn)+' so‘m · Chiqim: '+money(totalOut)+' so‘m · Qoldiq: '+money(totalIn-totalOut)+' so‘m</div>';
+ w.document.write(html+'<div class="print-controls"><button onclick="window.print()">🖨 Chop etish / PDF</button></div><style>@media print{.print-controls{display:none}}</style></body></html>');w.document.close();w.focus();
+}
+
+function renderAll(){if($("cash")&&!$("cash").classList.contains("hidden"))renderCash();renderCollection();renderInvoiceStatusList();renderCustomers();renderSaleCustomers();renderSaleInvoices();syncWarehouseOptions();renderWarehouseSettings();renderInvoices();renderDraft();renderWarehouse();salePreview();renderHistory();renderDeleted();
+ const showEdit=true,showDelete=true;
+ document.querySelectorAll("#draftList button,#invoiceDetailBody button,#historyList button,#deletedList button,#invoiceList button").forEach(b=>{
+ const call=b.getAttribute("onclick")||"";
+ if(/^(editDraft|editSaved|editInvoiceMeta)\(/.test(call))b.classList.toggle("hidden",!showEdit);
+ if(/^(markDraft|markSaved|restore|finalRemove)\(/.test(call))b.classList.toggle("hidden",!showDelete);
+ });
+ const clear=document.querySelector('button[onclick="clearDraft()"]');if(clear)clear.classList.toggle("hidden",!showDelete);
+ const deleteNav=document.querySelector('button[onclick="page(\'deleted\')"]');if(deleteNav)deleteNav.classList.toggle("hidden",!showDelete);
+const a=data.filter(x=>!x.deleteMarked&&!x.finalDeleted);const stock=a.filter(x=>!x.sold),sold=a.filter(x=>x.sold);$("summary").textContent="Ombor: "+stock.length+" dona · Sotilgan: "+sold.length+" dona";$("report").innerHTML="<p><b>Faol hisobot</b></p><p>Kirim: "+a.length+" dona · "+money(a.reduce((s,x)=>s+Number(x.cost),0))+" so‘m</p><p>Sotuv: "+sold.length+" dona · "+money(sold.reduce((s,x)=>s+Number(x.salePrice||0),0))+" so‘m</p>"}
+let qrScanner=null,scannerStarting=false,scanSession=0;
 async function scan(target){
- if(!window.isSecureContext){notify("Kamera uchun HTTPS manzil kerak. Faylni GitHub Pages orqali oching.",true);return}
- if(!navigator.mediaDevices?.getUserMedia){notify("Brauzer kameraga ruxsat bermayapti.",true);return}
- if(typeof Html5Qrcode==="undefined"){notify("Skaner kutubxonasi yuklanmadi. Internetni tekshiring.",true);return}
- await stopCamera();
+ if(scannerStarting)return;
+ if(!window.isSecureContext){notify("Kamera HTTPS orqali ishlaydi. Saytni GitHub Pages orqali oching.",true);return}
+ if(!navigator.mediaDevices?.getUserMedia){notify("Brauzer kamera imkoniyatini bermayapti.",true);return}
+ if(typeof Html5Qrcode==="undefined"){notify("Skaner moduli yuklanmadi. Internetni tekshiring.",true);return}
+ scannerStarting=true;
+ const session=++scanSession;
+ await stopCamera(false);
  $("cameraBox").style.display="block";
  $("reader").innerHTML="";
+ const config={fps:10,aspectRatio:1.333333};
+ let lastError=null;
  try{
-  scannerStarting=true;
-  qrScanner=new Html5Qrcode("reader",{verbose:false});
-  await qrScanner.start({facingMode:"environment"},{fps:12,qrbox:{width:240,height:160}},async code=>{
-    if(!qrScanner)return;
-    $(target).value=code;
-    await stopCamera();
-    if(target==="findBarcode")renderWarehouse();
-    if(target==="saleBarcode")salePreview();
-    notify("Barkod o‘qildi: "+code);
-  },()=>{});
- }catch(e){await stopCamera();notify("Kamera ochilmadi. Chrome uchun kamera ruxsatini tekshiring.",true)}finally{scannerStarting=false}
+  // Avval orqa kamerani, u ochilmasa mavjud kameralar ro‘yxatini sinaymiz.
+  let choices=[{facingMode:{ideal:"environment"}},{facingMode:"environment"}];
+  try{
+   const devices=await Html5Qrcode.getCameras();
+   const rear=devices.filter(d=>/back|rear|environment|orqa|задн/i.test(d.label||""));
+   const others=devices.filter(d=>!rear.includes(d));
+   choices.push(...rear.map(d=>d.id),...others.map(d=>d.id));
+  }catch(e){lastError=e}
+  for(const camera of choices){
+   if(session!==scanSession)break;
+   let candidate=null;
+   try{
+    $("reader").innerHTML="";
+    candidate=new Html5Qrcode("reader",{verbose:false});
+    qrScanner=candidate;
+    await candidate.start(camera,config,async code=>{
+     if(session!==scanSession||!qrScanner)return;
+     $(target).value=code;
+     await stopCamera();
+     if(target==="findBarcode")renderWarehouse();
+     if(target==="saleBarcode")salePreview();
+     notify("Barkod o‘qildi: "+code);
+    },()=>{});
+    scannerStarting=false;
+    return;
+   }catch(e){
+    lastError=e;
+    if(candidate){try{await candidate.stop()}catch(_){}try{candidate.clear()}catch(_){}}
+    if(qrScanner===candidate)qrScanner=null;
+   }
+  }
+  $("cameraBox").style.display="none";
+  const detail=String(lastError?.message||lastError?.name||lastError||"Noma’lum xatolik").slice(0,190);
+  notify("Kamera ochilmadi: "+detail,true);
+ }catch(e){
+  $("cameraBox").style.display="none";
+  notify("Skaner xatosi: "+String(e?.message||e).slice(0,190),true);
+ }finally{scannerStarting=false}
 }
-async function stopCamera(){
- if(qrScanner){const s=qrScanner;qrScanner=null;try{await s.stop()}catch(e){}try{s.clear()}catch(e){}}
+async function stopCamera(cancel=true){
+ if(cancel)scanSession++;
+ const s=qrScanner;qrScanner=null;
+ if(s){try{await s.stop()}catch(e){}try{s.clear()}catch(e){}}
  $("cameraBox").style.display="none";
 }
 $("date").value=new Date().toLocaleDateString("en-CA");
 if(draft.length){$("invoice").value=draft[0].invoice;$("date").value=draft[0].date;$("supplier").value=draft[0].supplier;$("location").value=draft[0].location}
-page("home");
+
+
+// Mijozlar: JSHSHIR doimiy identifikator, pasport almashtirish tarixi saqlanadi.
+const CKEY="sher_ai_nasiya_customers_v13_5";
+let customers=[];try{const saved=JSON.parse(localStorage.getItem(CKEY)||"[]");if(Array.isArray(saved))customers=saved}catch(e){}
+let editingCustomerPinfl=null;
+function persistCustomers(){try{localStorage.setItem(CKEY,JSON.stringify(customers));return true}catch(e){notify("Mijoz ma’lumotlari saqlanmadi!",true);return false}}
+function resetCustomerForm(){editingCustomerPinfl=null;for(const id of ["cFio","cPinfl","cPassport","cPhone","cAddress"])$(id).value="";$("cPinfl").disabled=false;$("customerFormTitle").textContent="Yangi mijoz";$("customerSaveBtn").textContent="✓ Mijozni saqlash"}
+function saveCustomer(){
+ const fio=$("cFio").value.trim().toUpperCase().replace(/\s+/g," "),pinfl=$("cPinfl").value.trim(),passport=$("cPassport").value.trim().toUpperCase().replace(/\s/g,""),phone=$("cPhone").value.trim(),address=$("cAddress").value.trim();
+ if(!fio||!passport||!/^\d{14}$/.test(pinfl)){notify("F.I.O., pasport va 14 xonali JSHSHIR majburiy!",true);return}
+ const same=customers.find(x=>x.pinfl===pinfl),passportOwner=customers.find(x=>x.pinfl!==pinfl&&(x.passport===passport||(x.passportHistory||[]).some(h=>h.passport===passport)));
+ if(passportOwner){notify("Ushbu pasport boshqa mijozga biriktirilgan!",true);return}
+ if(editingCustomerPinfl){
+  if(same&&same.deleteMarked){notify("Mijoz o‘chirishga belgilangan. Avval qayta tiklang.",true);return}
+  if(editingCustomerPinfl!==pinfl||!same){notify("JSHSHIRni o‘zgartirish mumkin emas.",true);return}
+  if(passport!==same.passport){
+   if(!confirm("Haqiqatan ham pasport ma’lumotini yangilamoqchimisiz?"))return;
+   const prev=JSON.parse(JSON.stringify(same));same.passportHistory=Array.isArray(same.passportHistory)?same.passportHistory:[];
+   same.passportHistory.push({passport:same.passport,replacedAt:new Date().toISOString()});same.passport=passport;
+   same.fio=fio;same.phone=phone;same.address=address;
+   if(!persistCustomers()){Object.assign(same,prev);return}
+   notify("Pasport yangilandi. Eski pasport tarixda saqlandi.");
+  }else{Object.assign(same,{fio,phone,address});if(!persistCustomers())return;notify("Mijoz ma’lumotlari yangilandi.")}
+ }else{
+  if(same){notify("Bu JSHSHIR bazada mavjud. Mijoz kartasidan «Pasportni yangilash»ni tanlang.",true);return}
+  customers.push({fio,pinfl,passport,phone,address,passportHistory:[],createdAt:new Date().toISOString()});
+  if(!persistCustomers()){customers.pop();return}notify("Mijoz saqlandi.");
+ }
+ resetCustomerForm();renderCustomers();
+}
+function editCustomer(pinfl){const x=customers.find(x=>x.pinfl===pinfl);if(!x||x.deleteMarked)return;editingCustomerPinfl=pinfl;$("cFio").value=x.fio;$("cPinfl").value=x.pinfl;$("cPinfl").disabled=true;$("cPassport").value=x.passport;$("cPhone").value=x.phone||"";$("cAddress").value=x.address||"";$("customerFormTitle").textContent="Mijoz / pasportni yangilash";$("customerSaveBtn").textContent="✓ O‘zgarishlarni saqlash";window.scrollTo(0,0)}
+function renderCustomers(){const el=$("customerList");if(!el)return;const q=($("customerSearch").value||"").trim().toUpperCase();const arg=x=>JSON.stringify(x).replace(/"/g,"&quot;"); el.innerHTML=customers.filter(x=>[x.fio,x.pinfl,x.passport,...(x.passportHistory||[]).map(h=>h.passport)].some(v=>String(v||"").toUpperCase().includes(q))).map(x=>'<div class="item '+ (x.deleteMarked?"marked":"")+'"><b>'+esc(x.fio)+'</b><div class="muted">JSHSHIR: '+esc(x.pinfl)+' · Amaldagi pasport: '+esc(x.passport)+'</div>'+((x.passportHistory||[]).length?'<div class="muted">Oldingi pasportlar: '+(x.passportHistory||[]).map(h=>esc(h.passport)).join(", ")+'</div>':'')+''+(x.deleteMarked?'<div class="actions"><button class="secondary" onclick="restoreCustomer('+arg(x.pinfl)+')">↩ Qayta tiklash</button></div>':'<div class="actions"><button class="secondary" onclick="editCustomer('+arg(x.pinfl)+')">✎ Tahrirlash / pasportni yangilash</button><button class="danger" onclick="markCustomerForDeletion('+arg(x.pinfl)+')">🗑 O‘chirish</button></div>')+'</div>').join("")||"<p class='muted'>Mijoz topilmadi.</p>";
+}
+
+
+function markCustomerForDeletion(pinfl){
+ const x=customers.find(z=>z.pinfl===pinfl);if(!x||x.deleteMarked)return;
+ if(!confirm("Rostdan ham ushbu mijozni o‘chirishga belgilamoqchimisiz?"))return;
+ x.deleteMarked=true;if(!persistCustomers()){x.deleteMarked=false;return}
+ if(editingCustomerPinfl===pinfl)resetCustomerForm();renderCustomers();renderDeleted();notify("Mijoz o‘chirishga belgilandi.");
+}
+function restoreCustomer(pinfl){
+ const x=customers.find(z=>z.pinfl===pinfl);if(!x||!x.deleteMarked)return;
+ if(!confirm("Haqiqatan ham ushbu mijozni qayta tiklamoqchimisiz?"))return;
+ x.deleteMarked=false;if(!persistCustomers()){x.deleteMarked=true;return}
+ renderCustomers();renderDeleted();notify("Mijoz qayta tiklandi.");
+}
+function finalDeleteCustomer(pinfl){
+ const i=customers.findIndex(z=>z.pinfl===pinfl&&z.deleteMarked);if(i<0)return;
+ if(!confirm("Rostdan ham ushbu mijozni BUTUNLAY o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi."))return;
+ const removed=customers.splice(i,1)[0];if(!persistCustomers()){customers.splice(i,0,removed);return}
+ if(editingCustomerPinfl===pinfl)resetCustomerForm();renderCustomers();renderDeleted();notify("Mijoz butunlay o‘chirildi.");
+}
+
+page("home");collectionToday();
+if($("saleFirstDate"))$("saleFirstDate").value=saleDateLocal(new Date());renderSaleItems();saleHistoryToday();
 </script></body></html>
